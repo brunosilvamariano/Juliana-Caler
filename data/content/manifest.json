@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "contentRoot": "data/content",
+  "files": {
+    "site": "site.json",
+    "navigation": "navigation.json",
+    "cta": "cta.json",
+    "hero": "hero.json",
+    "marquee": "marquee.json",
+    "about": "about.json",
+    "services": "services.json",
+    "projects": "projects.json",
+    "faq": "faq.json",
+    "contact": "contact.json"
+  }
+}

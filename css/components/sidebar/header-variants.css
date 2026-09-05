@@ -1,0 +1,126 @@
+/* =========================================================
+   HEADER VARIANTS — CURADORIA ATIVA
+   Somente duas arquiteturas oficiais: sidebar-premium e top-dock.
+   O top-dock usa a mesma largura útil das seções editoriais (máx. 1440px).
+   ========================================================= */
+
+/* 01 — SIDEBAR PREMIUM
+   Referência atual: lateral completa + topbar contextual. */
+body[data-header-variant="sidebar-premium"] .sidebar {
+  background: linear-gradient(145deg, rgba(255,255,255,.97), rgba(244,248,252,.94));
+}
+
+/* 02 — TOP DOCK
+   A antiga sidebar vira um dock horizontal flutuante no topo. */
+@media (min-width: 64rem) {
+  body[data-header-variant="top-dock"] .sidebar {
+    top: 1rem;
+    right: auto;
+    bottom: auto;
+    left: 50%;
+    width: var(--section-shell-width);
+    transform: translateX(-50%);
+    height: 5.1rem;
+    overflow: visible;
+    border-radius: 1.45rem;
+    background: rgba(255,255,255,.90);
+    box-shadow: 0 20px 55px rgba(15,23,42,.10);
+    backdrop-filter: blur(20px) saturate(135%);
+    -webkit-backdrop-filter: blur(20px) saturate(135%);
+  }
+
+  body[data-header-variant="top-dock"] .sidebar__inner {
+    height: 100%;
+    display: grid;
+    grid-template-columns: minmax(8rem, 12rem) minmax(0, 1fr) auto;
+    align-items: center;
+    gap: clamp(1rem, 2vw, 2rem);
+    padding: .65rem .8rem .65rem 1.2rem;
+  }
+
+  body[data-header-variant="top-dock"] .sidebar__brand-row {
+    min-height: 0;
+  }
+
+  body[data-header-variant="top-dock"] .sidebar__brand {
+    height: 2.6rem;
+  }
+
+  body[data-header-variant="top-dock"] .sidebar__brand-logo {
+    width: clamp(6.8rem, 8vw, 8.2rem);
+  }
+
+  body[data-header-variant="top-dock"] .sidebar__collapse,
+  body[data-header-variant="top-dock"] .sidebar__section-label,
+  body[data-header-variant="top-dock"] .sidebar__availability,
+  body[data-header-variant="top-dock"] .sidebar__socials {
+    display: none;
+  }
+
+  body[data-header-variant="top-dock"] .sidebar__nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .2rem;
+  }
+
+  body[data-header-variant="top-dock"] .sidebar__link {
+    min-height: 2.8rem;
+    display: inline-flex;
+    grid-template-columns: none;
+    gap: .5rem;
+    padding: 0 .75rem;
+    border-radius: .9rem;
+  }
+
+  body[data-header-variant="top-dock"] .sidebar__icon-box {
+    display: none;
+  }
+
+  body[data-header-variant="top-dock"] .sidebar__link-text {
+    font-size: .72rem;
+  }
+
+  body[data-header-variant="top-dock"] .sidebar__link-indicator {
+    position: absolute;
+    right: 50%;
+    bottom: .3rem;
+    width: 1rem;
+    height: 2px;
+    border-radius: 999px;
+    transform: translateX(50%);
+  }
+
+  body[data-header-variant="top-dock"] .sidebar__link.is-active,
+  body[data-header-variant="top-dock"] .sidebar__link[aria-current="page"] {
+    border-color: transparent;
+    background: #f5f7ff;
+    box-shadow: none;
+  }
+
+  body[data-header-variant="top-dock"] .sidebar__footer {
+    margin-top: 0;
+    display: block;
+  }
+
+  body[data-header-variant="top-dock"] .sidebar__contact {
+    min-width: 10.5rem;
+    min-height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: .75rem;
+    padding: .48rem .55rem .48rem .9rem;
+    border-radius: .95rem;
+    background: #111827;
+    color: #fff;
+  }
+
+  body[data-header-variant="top-dock"] .sidebar__contact-label {
+    color: rgba(255,255,255,.58);
+  }
+
+  body[data-header-variant="top-dock"] .sidebar__contact-email {
+    display: none;
+  }
+}

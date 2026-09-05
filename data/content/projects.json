@@ -1,0 +1,61 @@
+{
+  "eyebrow": "04 / Galeria",
+  "metaLines": [
+    "Bruna Gesser · Psicologia Clínica",
+    "Joinville · SC"
+  ],
+  "title": {
+    "main": "Um olhar atento para",
+    "accent": "cada história."
+  },
+  "description": "Conheça um pouco mais sobre Bruna Gesser e sua atuação em psicologia clínica.",
+  "items": [
+    {
+      "title": "Bruna Gesser",
+      "category": "Psicóloga Clínica · Joinville",
+      "image": {
+        "src": "assets/images/projects/project-01.webp",
+        "alt": "Bruna Gesser — bruna gesser"
+      }
+    },
+    {
+      "title": "Escuta e presença",
+      "category": "Psicoterapia · Adolescentes e Adultos",
+      "image": {
+        "src": "assets/images/projects/project-02.webp",
+        "alt": "Bruna Gesser — escuta e presença"
+      }
+    },
+    {
+      "title": "Cuidado individual",
+      "category": "Psicologia Clínica · Acolhimento",
+      "image": {
+        "src": "assets/images/projects/project-03.webp",
+        "alt": "Bruna Gesser — cuidado individual"
+      }
+    },
+    {
+      "title": "Um processo singular",
+      "category": "Escuta · Reflexão · Autoconhecimento",
+      "image": {
+        "src": "assets/images/projects/project-04.webp",
+        "alt": "Bruna Gesser — um processo singular"
+      }
+    },
+    {
+      "title": "Psicoterapia em Joinville",
+      "category": "Atendimento psicológico · Joinville/SC",
+      "image": {
+        "src": "assets/images/projects/project-05.webp",
+        "alt": "Bruna Gesser — psicoterapia em joinville"
+      }
+    }
+  ],
+  "footer": {
+    "note": "Psicologia clínica · Adolescentes e adultos · Joinville/SC",
+    "cta": {
+      "label": "Agendar atendimento",
+      "href": "#contato"
+    }
+  }
+}

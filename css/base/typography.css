@@ -1,0 +1,49 @@
+/* =========================================================
+   TYPOGRAPHY — premium, fluida e multi-nicho
+   ========================================================= */
+
+/* Fontes locais são opcionais; consulte assets/fonts/README.md. */
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--fs-md);
+  font-weight: var(--fw-regular);
+  line-height: var(--lh-body);
+  color: var(--color-text);
+}
+
+h1, h2, h3, h4, h5, h6,
+.heading,
+.display {
+  font-family: var(--font-display);
+  color: var(--color-text-strong);
+  font-weight: var(--fw-bold);
+  letter-spacing: var(--tracking-tight);
+}
+
+h1, .display-xl { font-size: var(--fs-hero); line-height: var(--lh-tight); letter-spacing: var(--tracking-tightest); }
+h2, .display-lg { font-size: var(--fs-5xl); line-height: 1; }
+h3, .display-md { font-size: var(--fs-4xl); line-height: var(--lh-heading); }
+h4 { font-size: var(--fs-3xl); line-height: 1.12; }
+h5 { font-size: var(--fs-2xl); line-height: 1.18; }
+h6 { font-size: var(--fs-xl); line-height: 1.25; }
+
+.eyebrow {
+  font-family: var(--font-body);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-bold);
+  letter-spacing: var(--tracking-wider);
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.lead {
+  max-width: var(--measure-md);
+  font-size: var(--fs-lg);
+  line-height: 1.6;
+}
+
+.prose { max-width: var(--measure-lg); }
+.prose > * + * { margin-top: 1em; }
+small, .text-small { font-size: var(--fs-sm); }
+strong, b { font-weight: var(--fw-semibold); color: var(--color-text-strong); }

@@ -1,0 +1,756 @@
+/* =========================================================
+   HERO — EDITORIAL + CURVA BÉZIER V8
+   ---------------------------------------------------------
+   Objetivo:
+   - conteúdo editorial à esquerda;
+   - fotografia à direita;
+   - divisão orgânica calculada por SVG Bézier;
+   - mesma geometria em diferentes larguras de desktop;
+   - sem CDN e sem dependência visual externa.
+
+   IMPORTANTE:
+   O recorte da fotografia usa #hero-media-clip-v8, definido
+   no SVG do próprio index.html. Nenhuma camada visual é aplicada
+   sobre a fotografia; o SVG existe somente para o clipPath.
+   ========================================================= */
+
+.hero-editorial{
+  /* Estes dois valores controlam a proporção geral do Hero. */
+   --hero-content-width: 52%;
+  --hero-media-width: 48%;
+
+  position: relative;
+  min-height: calc(100vh - var(--topbar-height) - (var(--sidebar-offset) * 3));
+  margin: 0 var(--sidebar-offset) var(--sidebar-offset) 0;
+  overflow: hidden;
+  border: 1px solid rgba(15, 23, 42, 0.06);
+  border-radius: var(--hero-radius);
+  background: var(--hero-surface);
+  box-shadow: var(--hero-shadow);
+  isolation: isolate;
+}
+
+.hero-editorial__grid{
+  min-height: inherit;
+  display: grid;
+  grid-template-columns: minmax(0, var(--hero-content-width)) minmax(0, var(--hero-media-width));
+}
+
+/* ---------- Conteúdo editorial ---------- */
+.hero-editorial__content{
+  position: relative;
+  z-index: 4;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 0;
+  padding: clamp(3rem, 5vw, 6.25rem) clamp(2.25rem, 4vw, 5.25rem);
+}
+
+.hero-editorial__eyebrow{
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  width: fit-content;
+  margin-bottom: clamp(1.25rem, 2.5vw, 2rem);
+  color: var(--color-primary);
+  font-size: var(--fs-2xs);
+  font-weight: var(--fw-bold);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+}
+
+.hero-editorial__eyebrow::before{
+  content: "";
+  width: 2rem;
+  height: 1px;
+  background: currentColor;
+  opacity: 0.8;
+}
+
+.hero-editorial__title{
+  max-width: 12ch;
+  margin: 0;
+  color: var(--color-text-strong);
+  font-family: var(--font-display);
+  font-size: var(--hero-title-size);
+  font-weight: var(--fw-semibold);
+  line-height: 0.98;
+  letter-spacing: var(--tracking-tightest);
+  text-wrap: balance;
+  overflow-wrap: normal;
+}
+
+.hero-editorial__title-accent{
+  color: var(--color-primary);
+}
+
+.hero-editorial__text{
+  max-width: 42ch;
+  margin: clamp(1.35rem, 2.5vw, 2rem) 0 0;
+  color: var(--color-text-muted);
+  font-size: clamp(0.92rem, 0.84rem + 0.22vw, 1.06rem);
+  line-height: 1.72;
+}
+
+.hero-editorial__actions{
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  margin-top: clamp(1.8rem, 3vw, 2.55rem);
+}
+
+.hero-editorial__primary,
+.hero-editorial__secondary{
+  min-height: 3.15rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.76rem;
+  font-weight: var(--fw-semibold);
+  text-decoration: none;
+  transition:
+    transform var(--transition-ui),
+    background var(--transition-ui),
+    border-color var(--transition-ui),
+    color var(--transition-ui),
+    box-shadow var(--transition-ui);
+}
+
+.hero-editorial__primary{
+  padding: 0 1.35rem 0 1.5rem;
+  border: 1px solid var(--slate-950);
+  background: var(--slate-950);
+  color: #fff;
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.13);
+}
+
+.hero-editorial__primary img,
+.hero-editorial__secondary img{
+  width: 1rem;
+  height: 1rem;
+  transition: transform var(--transition-premium);
+}
+
+.hero-editorial__primary img{
+  filter: brightness(0) invert(1);
+}
+
+.hero-editorial__primary:hover{
+  border-color: var(--color-primary);
+  background: var(--color-primary);
+  box-shadow: var(--shadow-primary);
+  transform: translateY(-2px);
+}
+
+.hero-editorial__primary:hover img{
+  transform: translate(0.12rem, -0.12rem);
+}
+
+.hero-editorial__secondary{
+  padding: 0 0.9rem 0 0.25rem;
+  border: 1px solid transparent;
+  color: var(--slate-800);
+}
+
+.hero-editorial__secondary-icon{
+  width: 3.05rem;
+  height: 3.05rem;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(15, 23, 42, 0.09);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 8px 22px rgba(15, 23, 42, 0.07);
+  transition:
+    border-color var(--transition-ui),
+    background var(--transition-ui),
+    transform var(--transition-premium);
+}
+
+.hero-editorial__secondary:hover .hero-editorial__secondary-icon{
+  border-color: color-mix(in srgb, var(--color-primary) 25%, transparent);
+  background: var(--blue-50);
+  transform: scale(1.04);
+}
+
+/* ---------- Indicador de seção ---------- */
+
+
+/* =========================================================
+   FOTOGRAFIA + RECORTE BÉZIER
+   ---------------------------------------------------------
+   A curva usa objectBoundingBox (0 → 1), portanto acompanha
+   a caixa da fotografia em qualquer resolução desktop.
+
+   PONTOS-CHAVE DA BORDA (aprox. no Hero completo):
+   topo       ≈ 60%
+   lobo alto  ≈ 66%
+   cintura    ≈ 50%
+   lobo baixo ≈ 66%
+   base       ≈ 60%
+   ========================================================= */
+.hero-editorial__media{
+  position: relative;
+  z-index: 1;
+  min-width: 0;
+  min-height: 100%;
+  overflow: hidden;
+
+  -webkit-clip-path: url(#hero-media-clip-v8);
+  clip-path: url(#hero-media-clip-v8);
+}
+
+.hero-editorial__image{
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 58% 50%;
+  transform: none;
+  filter: none;
+  opacity: 1;
+}
+
+.hero-editorial__media-shade{
+  display: none;
+}
+
+/* =========================================================
+   MÍDIA PURA
+   ---------------------------------------------------------
+   O Hero não aplica glow, shade, blur, filtro, gradiente ou
+   linha decorativa sobre as fotografias. O único tratamento
+   permitido é o recorte estrutural da variante.
+   ========================================================= */
+.hero-editorial__clip-defs{
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.hero-editorial::before{
+  display: none;
+}
+
+/* ---------- Ajuste intermediário de desktop ---------- */
+@media (max-width: 82rem) {
+  .hero-editorial{
+    --hero-content-width: 50%;
+    --hero-media-width: 50%;
+  }
+
+  .hero-editorial__content{
+    padding-inline: clamp(2rem, 3vw, 3.2rem);
+  }
+}
+
+/* =========================================================
+   TABLET / MOBILE
+   ---------------------------------------------------------
+   Em telas menores a composição vira vertical. O recorte SVG
+   desktop é removido para não comprimir a fotografia. A troca
+   entre conteúdo e imagem fica limpa e previsível.
+   ========================================================= */
+
+/* 03 — SPLIT */
+.hero-editorial[data-hero-variant="split"]{
+  --hero-content-width: 50%;
+  --hero-media-width: 50%;
+}
+.hero-editorial[data-hero-variant="split"] .hero-editorial__media{
+  -webkit-clip-path: none;
+  clip-path: none;
+  border-radius: 0;
+}
+
+
+/* 04 — ARCH */
+.hero-editorial[data-hero-variant="arch"]{
+  --hero-content-width: 52%;
+  --hero-media-width: 48%;
+}
+.hero-editorial[data-hero-variant="arch"] .hero-editorial__media{
+  align-self: end;
+  min-height: calc(100% - clamp(3.5rem, 7vw, 7rem));
+  margin: clamp(2rem, 3.5vw, 3.5rem) clamp(2rem, 3.5vw, 3.5rem) 0 0;
+  border-radius: 50% 50% 0 0 / 18% 18% 0 0;
+  -webkit-clip-path: none;
+  clip-path: none;
+}
+
+
+@media (max-width: 63.99rem) {
+  .hero-editorial{
+    --hero-content-width: 100%;
+    --hero-media-width: 100%;
+
+    min-height: auto;
+    margin: var(--sidebar-offset);
+    border-radius: 1.6rem;
+  }
+
+  .hero-editorial__grid{
+    min-height: auto;
+    grid-template-columns: 1fr;
+  }
+
+  .hero-editorial__content{
+    padding: clamp(3rem, 9vw, 5.25rem) clamp(1.35rem, 6vw, 3.5rem) clamp(2.4rem, 7vw, 4rem);
+  }
+
+  .hero-editorial__title{
+    max-width: 11ch;
+    font-size: clamp(3rem, 9vw, 5.6rem);
+  }
+
+  .hero-editorial__text{
+    max-width: 52ch;
+  }
+
+
+  .hero-editorial__media{
+    min-height: clamp(28rem, 75vw, 46rem);
+    margin-top: -0.25rem;
+    -webkit-clip-path: none;
+    clip-path: none;
+  }
+
+  .hero-editorial__image{
+    object-position: 60% 48%;
+  }
+
+}
+
+@media (max-width: 39.99rem) {
+  .hero-editorial{
+    margin: 0.65rem;
+    border-radius: 1.35rem;
+  }
+
+  .hero-editorial__content{
+    padding: 2.7rem 1.35rem 2rem;
+  }
+
+  .hero-editorial__eyebrow{
+    margin-bottom: 1.15rem;
+  }
+
+  .hero-editorial__title{
+    font-size: clamp(2.65rem, 13vw, 4.1rem);
+  }
+
+  .hero-editorial__actions{
+    align-items: stretch;
+  }
+
+  .hero-editorial__primary{
+    flex: 1 1 100%;
+  }
+
+  .hero-editorial__secondary{
+    justify-content: flex-start;
+  }
+
+  .hero-editorial__media{
+    min-height: 26rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-editorial__image,
+.hero-editorial__primary,
+.hero-editorial__primary img,
+.hero-editorial__secondary-icon{
+    transition: none;
+    transform: none;
+  }
+}
+
+/* =========================================================
+   HERO VARIANTS — CURATED ENGINE
+   ---------------------------------------------------------
+   Variantes ativas:
+   - organic
+   - diagonal
+   - split
+   - arch
+   - banner
+
+   O HTML continua sendo a fonte da configuração definitiva.
+   Query string (?hero=...) existe apenas para preview.
+   ========================================================= */
+
+
+/* 01 — ORGANIC
+   Variante original. Mantida como padrão do framework. */
+.hero-editorial[data-hero-variant="organic"] .hero-editorial__media{
+  -webkit-clip-path: url(#hero-media-clip-v8);
+  clip-path: url(#hero-media-clip-v8);
+}
+
+/* 02 — DIAGONAL
+   Corte geométrico; leitura mais tech/corporativa. */
+.hero-editorial[data-hero-variant="diagonal"]{
+  --hero-content-width: 49%;
+  --hero-media-width: 51%;
+}
+
+.hero-editorial[data-hero-variant="diagonal"] .hero-editorial__media{
+  -webkit-clip-path: polygon(16% 0, 100% 0, 100% 100%, 0 100%);
+  clip-path: polygon(16% 0, 100% 0, 100% 100%, 0 100%);
+}
+
+
+
+@media (max-width: 63.99rem) {
+  /* Todas as variantes voltam para uma composição previsível no mobile/tablet. */
+  .hero-editorial[data-hero-variant]{
+    --hero-content-width: 100%;
+    --hero-media-width: 100%;
+  }
+
+  .hero-editorial[data-hero-variant] .hero-editorial__media{
+    min-height: clamp(28rem, 75vw, 46rem);
+    margin: -0.25rem 0 0;
+    border-radius: 0;
+    -webkit-clip-path: none;
+    clip-path: none;
+    box-shadow: none;
+  }
+
+
+
+}
+
+
+/* 05 — BANNER / FULL HERO MEDIA */
+.hero-editorial[data-hero-variant="banner"]{
+  --hero-content-width: 100%;
+  --hero-media-width: 100%;
+  min-height: calc(100svh - var(--topbar-height) - (var(--sidebar-offset) * 2));
+  background: #0f172a;
+}
+
+.hero-editorial[data-hero-variant="banner"] .hero-editorial__grid{
+  position: relative;
+  min-height: inherit;
+  grid-template-columns: 1fr;
+}
+
+.hero-editorial[data-hero-variant="banner"] .hero-editorial__media{
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  width: 100%;
+  min-height: 0;
+  height: 100%;
+  margin: 0;
+  border-radius: 0;
+  -webkit-clip-path: none;
+  clip-path: none;
+  box-shadow: none;
+  transform: none;
+}
+
+.hero-editorial[data-hero-variant="banner"] .hero-editorial__image{
+  object-position: 58% 50%;
+  transform: none;
+}
+
+.hero-editorial[data-hero-variant="banner"] .hero-editorial__media-shade{
+  display: none;
+}
+
+.hero-editorial[data-hero-variant="banner"]::before{
+  display: none;
+}
+
+.hero-editorial[data-hero-variant="banner"] .hero-editorial__content{
+  z-index: 4;
+  width: min(100%, 74rem);
+  justify-self: start;
+  padding-right: clamp(2rem, 18vw, 18rem);
+}
+
+.hero-editorial[data-hero-variant="banner"] .hero-editorial__eyebrow{
+  color: var(--blue-300);
+}
+
+.hero-editorial[data-hero-variant="banner"] .hero-editorial__title{
+  max-width: 10ch;
+  color: #ffffff;
+  font-size: clamp(3.8rem, 7vw, 7.4rem);
+}
+
+.hero-editorial[data-hero-variant="banner"] .hero-editorial__title-accent{
+  color: var(--blue-200);
+}
+
+.hero-editorial[data-hero-variant="banner"] .hero-editorial__text{
+  max-width: 48ch;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.hero-editorial[data-hero-variant="banner"] .hero-editorial__primary{
+  border-color: rgba(255, 255, 255, 0.96);
+  background: #ffffff;
+  color: #0f172a;
+  box-shadow: 0 16px 38px rgba(2, 6, 23, 0.28);
+}
+
+.hero-editorial[data-hero-variant="banner"] .hero-editorial__primary img{
+  filter: none;
+}
+
+.hero-editorial[data-hero-variant="banner"] .hero-editorial__secondary{
+  color: #ffffff;
+}
+
+.hero-editorial[data-hero-variant="banner"] .hero-editorial__secondary-icon{
+  border-color: rgba(255, 255, 255, 0.22);
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(12px);
+}
+
+.hero-editorial[data-hero-variant="banner"] .hero-editorial__secondary-icon img{
+  filter: brightness(0) invert(1);
+}
+
+
+@media (max-width: 63.99rem) {
+  .hero-editorial[data-hero-variant="banner"] .hero-editorial__grid{
+    min-height: inherit;
+    display: grid;
+  }
+
+  .hero-editorial[data-hero-variant="banner"] .hero-editorial__media{
+    position: absolute;
+    inset: 0;
+    min-height: 0;
+    height: 100%;
+    margin: 0;
+    border-radius: 0;
+  }
+
+  .hero-editorial[data-hero-variant="banner"] .hero-editorial__content{
+    min-height: inherit;
+    justify-content: flex-end;
+    padding: clamp(4.5rem, 14vw, 7rem) clamp(1.35rem, 6vw, 3.5rem) clamp(3rem, 9vw, 5rem);
+  }
+
+  .hero-editorial[data-hero-variant="banner"] .hero-editorial__title{
+    max-width: 11ch;
+    font-size: clamp(3rem, 10vw, 5.6rem);
+  }
+
+  .hero-editorial[data-hero-variant="banner"] .hero-editorial__media-shade{
+    display: none;
+  }
+}
+
+
+/* =========================================================
+   RESPONSIVE HERO VARIANTS
+   Mantém a identidade das variantes ativas em tablet/mobile
+   sem reproduzir literalmente a composição desktop.
+   ========================================================= */
+
+/* ---------- TABLET / MOBILE GERAL ---------- */
+@media (max-width: 63.99rem) {
+  .hero-editorial[data-hero-variant]{
+    min-height: auto;
+  }
+
+  .hero-editorial[data-hero-variant] .hero-editorial__grid{
+    grid-template-columns: 1fr;
+  }
+
+  .hero-editorial[data-hero-variant] .hero-editorial__content{
+    position: relative;
+    z-index: 4;
+  }
+
+  .hero-editorial[data-hero-variant] .hero-editorial__media{
+    position: relative;
+    width: 100%;
+  }
+
+  /* 01 — ORGANIC
+     Mantém a linguagem orgânica, mas com curva mais suave. */
+  .hero-editorial[data-hero-variant="organic"] .hero-editorial__media{
+    min-height: clamp(22rem, 62vw, 34rem);
+    border-radius: clamp(1.7rem, 5vw, 2.6rem);
+    -webkit-clip-path: none;
+    clip-path: none;
+    overflow: hidden;
+  }
+
+  .hero-editorial[data-hero-variant="organic"] .hero-editorial__media::after{
+    content: none;
+  }
+
+  /* 02 — DIAGONAL */
+  .hero-editorial[data-hero-variant="diagonal"] .hero-editorial__media{
+    min-height: clamp(22rem, 62vw, 34rem);
+    border-radius: 0;
+    -webkit-clip-path: polygon(0 9%, 100% 0, 100% 91%, 0 100%);
+    clip-path: polygon(0 9%, 100% 0, 100% 91%, 0 100%);
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+  /* 03 — SPLIT
+     Em tablet/mobile vira uma divisão horizontal clara. */
+  .hero-editorial[data-hero-variant="split"] .hero-editorial__content{
+    padding-bottom: clamp(1.75rem, 5vw, 3rem);
+  }
+
+  .hero-editorial[data-hero-variant="split"] .hero-editorial__media{
+    min-height: clamp(21rem, 58vw, 31rem);
+    border-radius: 0;
+    -webkit-clip-path: none;
+    clip-path: none;
+    border-top: 1px solid rgba(15, 23, 42, 0.08);
+  }
+
+
+
+
+  /* 04 — ARCH */
+  .hero-editorial[data-hero-variant="arch"] .hero-editorial__media{
+    width: 90%;
+    min-height: clamp(22rem, 62vw, 33rem);
+    margin: clamp(1rem, 4vw, 2rem) auto 0;
+    border-radius: 50% 50% 0 0 / 16% 16% 0 0;
+    -webkit-clip-path: none;
+    clip-path: none;
+  }
+
+
+
+
+
+
+
+
+  /* 05 — BANNER
+     Continua fullscreen/banner, porém prioriza leitura no mobile. */
+  .hero-editorial[data-hero-variant="banner"]{
+    min-height: min(52rem, calc(100svh - var(--topbar-height)));
+  }
+
+  .hero-editorial[data-hero-variant="banner"] .hero-editorial__grid{
+    min-height: inherit;
+  }
+
+  .hero-editorial[data-hero-variant="banner"] .hero-editorial__media{
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+    margin: 0;
+    border-radius: 0;
+  }
+
+  .hero-editorial[data-hero-variant="banner"] .hero-editorial__content{
+    min-height: inherit;
+    justify-content: flex-end;
+    padding-top: clamp(6rem, 18vw, 9rem);
+    padding-bottom: clamp(3rem, 9vw, 5rem);
+  }
+}
+
+/* ---------- MOBILE COMPACTO ---------- */
+@media (max-width: 39.99rem) {
+  .hero-editorial[data-hero-variant] .hero-editorial__content{
+    padding-inline: clamp(1.15rem, 5vw, 1.5rem);
+  }
+
+
+  .hero-editorial[data-hero-variant="arch"] .hero-editorial__media{
+    width: 94%;
+  }
+
+
+  .hero-editorial[data-hero-variant="banner"]{
+    min-height: calc(100svh - var(--topbar-height) - 0.75rem);
+  }
+}
+
+
+/* =========================================================
+   ARCH — RETRATO RECORTADO / MÍDIA PURA
+   ---------------------------------------------------------
+   Recomendação de arquivo:
+   - 1536 × 2048 px ou maior (proporção 3:4);
+   - PNG ou WebP com transparência real;
+   - cabeça, cabelo e braços com respiro nas bordas.
+
+   A variante ARCH não aplica fundo, gradiente, blur, sombra,
+   máscara de cor ou overlay. A imagem é exibida sem efeitos.
+   ========================================================= */
+.hero-editorial[data-hero-variant="arch"] .hero-editorial__media{
+  background: transparent;
+  box-shadow: none;
+  filter: none;
+}
+
+.hero-editorial[data-hero-variant="arch"] .hero-editorial__image{
+  inset: auto 0 0;
+  object-fit: contain;
+  object-position: 50% 100%;
+  transform: none;
+  filter: none;
+  opacity: 1;
+}
+
+@media (max-width: 63.99rem){
+  .hero-editorial[data-hero-variant="arch"] .hero-editorial__image{
+    object-position: 50% 100%;
+  }
+}
+
+/* =========================================================
+   HERO + TOP DOCK — SHELL EDITORIAL ÚNICO
+   ---------------------------------------------------------
+   Quando o header ativo é top-dock, TODAS as variantes atuais
+   do Hero usam a mesma largura útil das demais seções.
+
+   Isso mantém alinhadas as bordas laterais de:
+   - top-dock;
+   - organic;
+   - diagonal;
+   - split;
+   - arch;
+   - banner;
+   - About / Services / Projects / FAQ / Contact.
+
+   A regra altera apenas o shell externo. Grid, recorte, imagem,
+   proporção e identidade interna de cada Hero são preservados.
+   ========================================================= */
+@media (min-width: 64rem) {
+  body[data-header-variant="top-dock"] .hero-editorial {
+    width: var(--section-shell-width);
+    margin-inline: auto;
+    margin-bottom: var(--sidebar-offset);
+  }
+}

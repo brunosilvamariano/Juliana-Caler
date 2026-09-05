@@ -1,0 +1,34 @@
+{
+  "items": [
+    {
+      "label": "Início",
+      "href": "#inicio",
+      "icon": "assets/icons/sidebar/home.svg"
+    },
+    {
+      "label": "Sobre",
+      "href": "#sobre",
+      "icon": "assets/icons/sidebar/user.svg"
+    },
+    {
+      "label": "Atendimentos",
+      "href": "#servicos",
+      "icon": "assets/icons/sidebar/grid.svg"
+    },
+    {
+      "label": "Galeria",
+      "href": "#projetos",
+      "icon": "assets/icons/sidebar/briefcase.svg"
+    },
+    {
+      "label": "FAQ",
+      "href": "#faq",
+      "icon": "assets/icons/sidebar/sparkles.svg"
+    },
+    {
+      "label": "Contato",
+      "href": "#contato",
+      "icon": "assets/icons/sidebar/mail.svg"
+    }
+  ]
+}

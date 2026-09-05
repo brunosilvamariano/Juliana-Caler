@@ -1,0 +1,63 @@
+/* =========================================================
+   ACCESSIBILITY — GUARDA FINAL DA FUNDAÇÃO
+   ---------------------------------------------------------
+   Carregada após componentes/seções dentro da cascata do
+   framework. Assim as regras de acessibilidade vencem sem
+   depender de marcador de prioridade. css/custom.css continua disponível
+   para customizações conscientes do projeto.
+   ========================================================= */
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *, *::before, *::after {
+    animation-duration: 0.01ms;
+    animation-iteration-count: 1;
+    transition-duration: 0.01ms;
+    scroll-behavior: auto;
+  }
+
+  .marquee-modern__track {
+    transform: none;
+    will-change: auto;
+  }
+
+  .floating-whatsapp,
+  .floating-whatsapp__pulse {
+    transition: none;
+    animation: none;
+  }
+
+  .contact-editorial__primary-icon,
+  .contact-editorial__channel-name,
+  .contact-editorial__channel-arrow,
+  .services-editorial__item,
+  .services-editorial__name,
+  .services-editorial__arrow,
+  .services-editorial__thumb,
+  .about-editorial__slide,
+  .about-editorial__next,
+  .about-editorial__dot,
+  .faq-editorial__answer,
+  .faq-editorial__toggle,
+  .faq-editorial__question-text,
+  .faq-editorial__contact-icon,
+  .projects-editorial__media img {
+    transition: none;
+  }
+}

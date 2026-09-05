@@ -1,0 +1,106 @@
+{
+  "eyebrow": "03 / Atendimentos",
+  "metaLines": [
+    "Psicoterapia · Adolescentes · Adultos",
+    "Psicologia clínica"
+  ],
+  "title": {
+    "main": "Momentos da",
+    "accent": "sua trajetória."
+  },
+  "description": "Um espaço de cuidado psicológico para adolescentes e adultos, com atenção às experiências, emoções, relações e mudanças que atravessam cada fase da vida.",
+  "items": [
+    {
+      "title": "Psicoterapia para adolescentes",
+      "tags": [
+        "Adolescência",
+        "Emoções",
+        "Relações",
+        "Mudanças"
+      ],
+      "image": {
+        "src": "assets/images/services/service-01.webp",
+        "alt": "Bruna Gesser — psicoterapia para adolescentes"
+      },
+      "cta": {
+        "href": "https://wa.me/5547992302828?text=Ol%C3%A1%2C%20Bruna%21%20Conheci%20seu%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20psicoterapia%20para%20adolescentes%20e%20os%20hor%C3%A1rios%20dispon%C3%ADveis%20para%20atendimento.",
+        "ariaLabel": "Conversar no WhatsApp com Bruna Gesser sobre Psicoterapia para adolescentes"
+      }
+    },
+    {
+      "title": "Psicoterapia para adultos",
+      "tags": [
+        "Autoconhecimento",
+        "Emoções",
+        "Relações",
+        "Escolhas"
+      ],
+      "image": {
+        "src": "assets/images/services/service-02.webp",
+        "alt": "Bruna Gesser — psicoterapia para adultos"
+      },
+      "cta": {
+        "href": "https://wa.me/5547992302828?text=Ol%C3%A1%2C%20Bruna%21%20Conheci%20seu%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20psicoterapia%20para%20adultos%20e%20os%20hor%C3%A1rios%20dispon%C3%ADveis%20para%20atendimento.",
+        "ariaLabel": "Conversar no WhatsApp com Bruna Gesser sobre Psicoterapia para adultos"
+      }
+    },
+    {
+      "title": "Acompanhamento psicológico",
+      "tags": [
+        "Escuta",
+        "Acolhimento",
+        "Processo",
+        "Cuidado"
+      ],
+      "image": {
+        "src": "assets/images/services/service-03.webp",
+        "alt": "Bruna Gesser — acompanhamento psicológico"
+      },
+      "cta": {
+        "href": "https://wa.me/5547992302828?text=Ol%C3%A1%2C%20Bruna%21%20Conheci%20seu%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20acompanhamento%20psicol%C3%B3gico%20e%20os%20hor%C3%A1rios%20dispon%C3%ADveis%20para%20atendimento.",
+        "ariaLabel": "Conversar no WhatsApp com Bruna Gesser sobre Acompanhamento psicológico"
+      }
+    },
+    {
+      "title": "Saúde emocional",
+      "tags": [
+        "Sentimentos",
+        "Rotina",
+        "Limites",
+        "Bem-estar"
+      ],
+      "image": {
+        "src": "assets/images/services/service-04.webp",
+        "alt": "Bruna Gesser — saúde emocional"
+      },
+      "cta": {
+        "href": "https://wa.me/5547992302828?text=Ol%C3%A1%2C%20Bruna%21%20Conheci%20seu%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20sa%C3%BAde%20emocional%20e%20os%20hor%C3%A1rios%20dispon%C3%ADveis%20para%20atendimento.",
+        "ariaLabel": "Conversar no WhatsApp com Bruna Gesser sobre Saúde emocional"
+      }
+    },
+    {
+      "title": "Autoconhecimento",
+      "tags": [
+        "Padrões",
+        "História",
+        "Escolhas",
+        "Desenvolvimento"
+      ],
+      "image": {
+        "src": "assets/images/services/service-05.webp",
+        "alt": "Bruna Gesser — autoconhecimento"
+      },
+      "cta": {
+        "href": "https://wa.me/5547992302828?text=Ol%C3%A1%2C%20Bruna%21%20Conheci%20seu%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20autoconhecimento%20e%20os%20hor%C3%A1rios%20dispon%C3%ADveis%20para%20atendimento.",
+        "ariaLabel": "Conversar no WhatsApp com Bruna Gesser sobre Autoconhecimento"
+      }
+    }
+  ],
+  "footer": {
+    "note": "05 temas · Um processo construído com cuidado",
+    "cta": {
+      "label": "Agendar atendimento",
+      "href": "#contato"
+    }
+  }
+}

@@ -1,0 +1,239 @@
+/* =========================================================
+   MARQUEE MODERN — FAIXA DE TRANSIÇÃO COMPACTA
+   ---------------------------------------------------------
+   Objetivos:
+   - reduzir o peso visual entre Hero e Sobre;
+   - manter movimento ligado ao scroll, sem autoplay;
+   - preservar legibilidade, ritmo e baixo custo visual;
+   - respeitar prefers-reduced-motion.
+   ========================================================= */
+
+.marquee-modern {
+  --marquee-bg: color-mix(in srgb, var(--color-bg-subtle) 90%, #ffffff 10%);
+  --marquee-border: rgba(15, 23, 42, 0.08);
+  --marquee-text: color-mix(in srgb, var(--color-text-strong) 88%, transparent);
+  --marquee-muted: color-mix(in srgb, var(--color-text-muted) 72%, transparent);
+  --marquee-accent: var(--color-primary);
+  --marquee-gap: clamp(1.25rem, 2vw, 2.25rem);
+
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: var(--marquee-bg);
+  border-block: 1px solid var(--marquee-border);
+  isolation: isolate;
+}
+
+/* Luz sutil: mantém continuidade com o Hero sem competir com o conteúdo. */
+.marquee-modern::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: linear-gradient(
+    90deg,
+    color-mix(in srgb, var(--color-primary) 3.5%, transparent),
+    transparent 28%,
+    transparent 72%,
+    rgba(99, 102, 241, 0.025)
+  );
+}
+
+/* Fade lateral evita cortes secos das palavras nas bordas. */
+.marquee-modern::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+  background: linear-gradient(
+    90deg,
+    var(--marquee-bg) 0%,
+    transparent clamp(1rem, 4vw, 4.5rem),
+    transparent calc(100% - clamp(1rem, 4vw, 4.5rem)),
+    var(--marquee-bg) 100%
+  );
+}
+
+.marquee-modern__viewport {
+  width: 100%;
+  overflow: hidden;
+  padding-block: clamp(1rem, 1.6vw, 1.35rem);
+}
+
+.marquee-modern__track {
+  display: flex;
+  width: max-content;
+  transform: translate3d(0, 0, 0);
+  will-change: transform;
+}
+
+.marquee-modern__group {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  min-width: max-content;
+}
+
+.marquee-modern__word {
+  padding-inline: var(--marquee-gap);
+  color: var(--marquee-text);
+  font-family: var(--font-display);
+  font-size: var(--marquee-font-size);
+  font-weight: 650;
+  letter-spacing: -0.025em;
+}
+
+/* Alternância mais discreta que o outline antigo. */
+.marquee-modern__word--muted {
+  color: var(--marquee-muted);
+  font-weight: 540;
+}
+
+.marquee-modern__dot {
+  position: relative;
+  flex: 0 0 auto;
+  width: 0.34rem;
+  height: 0.34rem;
+  margin-inline: clamp(0.05rem, 0.25vw, 0.3rem);
+  border-radius: 999px;
+  background: var(--marquee-accent);
+  box-shadow: 0 0 0 0.24rem color-mix(in srgb, var(--marquee-accent) 9%, transparent);
+}
+
+@media (max-width: 63.99rem) {
+  .marquee-modern {
+    --marquee-gap: clamp(1rem, 3vw, 1.6rem);
+    --marquee-font-size: clamp(1.20rem, 3.2vw, 1.48rem);
+  }
+
+  .marquee-modern__viewport {
+    padding-block: 0.95rem;
+  }
+}
+
+@media (max-width: 39.99rem) {
+  .marquee-modern {
+    --marquee-gap: 0.95rem;
+    --marquee-font-size: clamp(1.08rem, 4.6vw, 1.22rem);
+  }
+
+  .marquee-modern__viewport {
+    padding-block: 0.85rem;
+  }
+
+  .marquee-modern__dot {
+    width: 0.28rem;
+    height: 0.28rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-modern__track {
+    transform: none;
+    will-change: auto;
+  }
+}
+
+/* =========================================================
+   MARQUEE VARIANTS — CURATED 2
+   ---------------------------------------------------------
+   Variantes oficiais:
+   modern-clean | soft-outline
+
+   Regra principal:
+   nenhuma variante pode cortar ou esconder palavras.
+   O movimento continua vinculado ao scroll, sem autoplay.
+   ========================================================= */
+
+.marquee-modern {
+  --marquee-font-size: clamp(1.46rem, 2vw, 1.98rem);
+  --marquee-line-height: 1.15;
+}
+
+.marquee-modern,
+.marquee-modern__viewport,
+.marquee-modern__track {
+  overflow-y: visible;
+}
+
+.marquee-modern__viewport {
+  min-height: calc(var(--marquee-font-size) * 1.75);
+}
+
+.marquee-modern__track {
+  align-items: center;
+  padding-block: 0.38em;
+}
+
+.marquee-modern__word {
+  display: inline-block;
+  flex: 0 0 auto;
+  max-width: none;
+  line-height: var(--marquee-line-height);
+  white-space: nowrap;
+  overflow: visible;
+  text-overflow: clip;
+}
+
+/* 01 — MODERN CLEAN */
+.marquee-modern[data-marquee-variant="modern-clean"] .marquee-modern__word {
+  font-size: var(--marquee-font-size);
+  font-weight: 640;
+  letter-spacing: -0.035em;
+  color: #182033;
+}
+
+/* 02 — SOFT OUTLINE */
+.marquee-modern[data-marquee-variant="soft-outline"] .marquee-modern__word {
+  font-size: clamp(1.58rem, 2.3vw, 2.26rem);
+  font-weight: 760;
+  letter-spacing: -0.045em;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(24, 32, 51, 0.62);
+  text-stroke: 1px rgba(24, 32, 51, 0.62);
+}
+
+.marquee-modern[data-marquee-variant="soft-outline"] .marquee-modern__word:nth-of-type(4n + 1) {
+  color: #182033;
+  -webkit-text-stroke: 0;
+  text-stroke: 0;
+}
+
+/* ---------- TABLET ---------- */
+@media (max-width: 63.99rem) {
+  .marquee-modern {
+    --marquee-font-size: clamp(1.28rem, 3.5vw, 1.56rem);
+    --marquee-line-height: 1.18;
+  }
+
+  .marquee-modern__viewport {
+    min-height: calc(var(--marquee-font-size) * 1.85);
+  }
+
+  .marquee-modern[data-marquee-variant="soft-outline"] .marquee-modern__word {
+    font-size: clamp(1.34rem, 4.2vw, 1.86rem);
+  }
+}
+
+/* ---------- MOBILE ---------- */
+@media (max-width: 39.99rem) {
+  .marquee-modern {
+    --marquee-font-size: clamp(1.16rem, 5vw, 1.34rem);
+    --marquee-line-height: 1.2;
+  }
+
+  .marquee-modern__viewport {
+    min-height: calc(var(--marquee-font-size) * 2);
+  }
+
+  .marquee-modern__track {
+    padding-block: 0.52em;
+  }
+
+  .marquee-modern[data-marquee-variant="soft-outline"] .marquee-modern__word {
+    font-size: clamp(1.18rem, 5.6vw, 1.48rem);
+    -webkit-text-stroke-width: 0.8px;
+  }
+}

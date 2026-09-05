@@ -1,0 +1,5 @@
+/* Utilitários mínimos. Cresça somente quando houver uso real. */
+.flow > * + * { margin-top: var(--flow-space, var(--space-6)); }
+.text-center { text-align: center; }
+.text-muted { color: var(--color-text-muted); }
+.surface { background: var(--color-surface); }

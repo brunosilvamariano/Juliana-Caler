@@ -1,0 +1,28 @@
+{
+  "items": [
+    {
+      "text": "Psicologia Clínica",
+      "muted": false
+    },
+    {
+      "text": "Adolescentes",
+      "muted": true
+    },
+    {
+      "text": "Adultos",
+      "muted": false
+    },
+    {
+      "text": "Escuta",
+      "muted": true
+    },
+    {
+      "text": "Acolhimento",
+      "muted": false
+    },
+    {
+      "text": "Autoconhecimento",
+      "muted": true
+    }
+  ]
+}

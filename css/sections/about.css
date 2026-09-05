@@ -1,0 +1,750 @@
+/**
+ * =========================================================
+ * ABOUT / QUEM SOMOS — Editorial + Fluid Slider
+ * - Composição editorial com bastante respiro
+ * - Slider orgânico com 3 imagens WebP locais
+ * - Métricas e quote integradas ao layout
+ * - Responsivo e sem CDN externo
+ * =========================================================
+ */
+
+.about-editorial {
+  position: relative;
+  overflow: hidden;
+  background: #ffffff;
+  border-top: 1px solid var(--color-border, #e2e8f0);
+}
+
+
+.about-editorial__inner {
+  position: relative;
+  z-index: 1;
+  width: var(--section-shell-width);
+  margin-inline: auto;
+  padding-block: clamp(82px, 9vw, 150px) clamp(90px, 10vw, 160px);
+}
+
+.about-editorial__topline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--section-topline-gap);
+  padding-bottom: var(--section-topline-padding-bottom);
+  border-bottom: 1px solid var(--color-border, #e2e8f0);
+}
+
+.about-editorial__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--color-primary, #2563eb);
+  font-size: var(--section-eyebrow-size);
+  font-weight: var(--section-eyebrow-weight);
+  letter-spacing: var(--section-eyebrow-tracking);
+  text-transform: uppercase;
+}
+
+.about-editorial__eyebrow::before {
+  content: "";
+  width: var(--section-eyebrow-line-width);
+  height: 1px;
+  background: currentColor;
+}
+
+.about-editorial__meta {
+  color: var(--color-text-muted, #94a3b8);
+  font-size: var(--section-meta-size);
+  font-weight: var(--section-meta-weight);
+  letter-spacing: var(--section-meta-tracking);
+  line-height: var(--section-meta-line-height);
+  text-align: right;
+  text-transform: uppercase;
+}
+
+.about-editorial__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.04fr) minmax(430px, 0.82fr);
+  gap: clamp(56px, 7vw, 118px);
+  align-items: center;
+  padding-top: clamp(54px, 6vw, 90px);
+}
+
+.about-editorial__content {
+  min-width: 0;
+}
+
+.about-editorial__title {
+  max-width: 900px;
+  margin: 0;
+  color: var(--color-text-primary, #172235);
+  font-family: var(--font-display, "Manrope", sans-serif);
+  font-size: var(--section-title-size);
+  font-weight: var(--section-title-weight);
+  letter-spacing: var(--section-title-tracking);
+  line-height: var(--section-title-line-height);
+  text-wrap: balance;
+  overflow-wrap: normal;
+}
+
+.about-editorial__title-line {
+  display: block;
+}
+
+.about-editorial__title-accent {
+  color: var(--color-primary, #2563eb);
+}
+
+.about-editorial__copy {
+  max-width: 600px;
+  margin: clamp(28px, 3vw, 42px) 0 0;
+  color: var(--color-text-secondary, #64748b);
+  font-size: var(--section-copy-size);
+  font-weight: var(--section-copy-weight);
+  line-height: var(--section-copy-line-height);
+}
+
+.about-editorial__metrics {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: clamp(42px, 5vw, 72px);
+  border-top: 1px solid var(--color-border, #e2e8f0);
+  border-bottom: 1px solid var(--color-border, #e2e8f0);
+}
+
+.about-editorial__metric {
+  min-height: 158px;
+  padding: 30px 26px 28px 0;
+}
+
+.about-editorial__metric + .about-editorial__metric {
+  padding-left: 30px;
+  border-left: 1px solid var(--color-border, #e2e8f0);
+}
+
+/* ---------------------------------------------------------
+   Símbolo "+" das métricas
+   - Separado visualmente do número para ter escala própria
+   - Não interfere na animação dos contadores
+   --------------------------------------------------------- */
+
+.about-editorial__bottom {
+  display: block;
+  margin-top: clamp(34px, 4vw, 54px);
+}
+
+.about-editorial__quote {
+  display: grid;
+  grid-template-columns: 54px minmax(0, 1fr);
+  gap: 20px;
+  align-items: start;
+  max-width: 650px;
+}
+
+.about-editorial__quote-mark {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: color-mix(in srgb, var(--color-primary) 8%, transparent);
+  color: var(--color-primary, #2563eb);
+  font-family: Georgia, serif;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.about-editorial__quote p {
+  margin: 0;
+  color: var(--color-text-secondary, #64748b);
+  font-size: 0.95rem;
+  line-height: 1.75;
+}
+
+
+/* ---------------------------------------------------------
+   Slider orgânico
+   --------------------------------------------------------- */
+
+.about-editorial__visual {
+  position: relative;
+  min-width: 0;
+  padding-right: clamp(0px, 2vw, 24px);
+}
+
+.about-editorial__slider-shell {
+  position: relative;
+  width: min(100%, 590px);
+  margin-inline: auto;
+}
+
+
+.about-editorial__slider {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  border-radius: 34% 20% 29% 22% / 24% 27% 19% 30%;
+  isolation: isolate;
+}
+
+.about-editorial__slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(1.035);
+  transition:
+    opacity 900ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 6.2s cubic-bezier(0.18, 0.8, 0.2, 1),
+    visibility 900ms linear;
+}
+
+.about-editorial__slide.is-active {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+  z-index: 2;
+}
+
+.about-editorial__slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.about-editorial__slide:nth-child(1) img {
+  object-position: 69% 50%;
+}
+
+.about-editorial__slide:nth-child(2) img {
+  object-position: 50% 48%;
+}
+
+.about-editorial__slide:nth-child(3) img {
+  object-position: 50% 52%;
+}
+
+.about-editorial__slide::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(8, 18, 34, 0) 58%, rgba(8, 18, 34, 0.13) 100%);
+  pointer-events: none;
+}
+
+.about-editorial__story-control {
+  position: absolute;
+  top: 44%;
+  right: clamp(-92px, -6vw, -62px);
+  display: grid;
+  justify-items: center;
+  gap: 14px;
+  color: var(--color-text-primary, #172235);
+}
+
+.about-editorial__next {
+  width: 62px;
+  height: 62px;
+  border: 1px solid color-mix(in srgb, var(--color-primary) 40%, transparent);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--color-primary, #2563eb);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  font-size: 1.6rem;
+  line-height: 1;
+  box-shadow: 0 10px 28px color-mix(in srgb, var(--color-primary) 8%, transparent);
+  transition:
+    transform 240ms ease,
+    background-color 240ms ease,
+    color 240ms ease,
+    box-shadow 240ms ease;
+}
+
+.about-editorial__next:hover,
+.about-editorial__next:focus-visible {
+  transform: translate(2px, -2px);
+  background: var(--color-primary, #2563eb);
+  color: #fff;
+  box-shadow: 0 14px 30px color-mix(in srgb, var(--color-primary) 20%, transparent);
+}
+
+.about-editorial__story-label {
+  max-width: 86px;
+  color: var(--color-text-primary, #172235);
+  font-size: 0.64rem;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+  line-height: 1.55;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.about-editorial__dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 28px;
+}
+
+.about-editorial__dot {
+  width: 9px;
+  height: 9px;
+  padding: 0;
+  border: 1px solid #b9c5d3;
+  border-radius: 50%;
+  background: transparent;
+  cursor: pointer;
+  transition:
+    width 240ms ease,
+    border-color 240ms ease,
+    background-color 240ms ease,
+    box-shadow 240ms ease;
+}
+
+.about-editorial__dot.is-active {
+  width: 24px;
+  border-color: var(--color-primary, #2563eb);
+  border-radius: 999px;
+  background: var(--color-primary, #2563eb);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--color-primary) 8%, transparent);
+}
+
+.about-editorial__dot:focus-visible,
+.about-editorial__next:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--color-primary) 22%, transparent);
+  outline-offset: 4px;
+}
+
+/* ---------------------------------------------------------
+   Breakpoints
+   --------------------------------------------------------- */
+
+@media (max-width: 1280px) {
+  .about-editorial__grid {
+    grid-template-columns: minmax(0, 1fr) minmax(390px, 0.78fr);
+    gap: 56px;
+  }
+
+  .about-editorial__story-control {
+    right: -34px;
+  }
+
+  .about-editorial__story-label {
+    display: none;
+  }
+}
+
+@media (max-width: 1024px) {
+  .about-editorial__inner {
+    width: var(--section-shell-width);
+  }
+
+  .about-editorial__meta {
+    display: none;
+  }
+
+  .about-editorial__grid {
+    grid-template-columns: 1fr;
+    gap: 64px;
+  }
+
+  .about-editorial__visual {
+    width: min(100%, 660px);
+    margin-inline: auto;
+    padding-right: 0;
+  }
+
+  .about-editorial__story-control {
+    top: auto;
+    right: 22px;
+    bottom: 22px;
+    display: block;
+  }
+
+  .about-editorial__next {
+    width: 54px;
+    height: 54px;
+    background: rgba(255, 255, 255, 0.94);
+  }
+
+  .about-editorial__dots {
+    margin-top: 22px;
+  }
+}
+
+@media (max-width: 700px) {
+  .about-editorial__inner {
+    width: var(--section-shell-width);
+    padding-block: 64px 86px;
+  }
+
+  .about-editorial__topline {
+    padding-bottom: var(--section-topline-padding-bottom-mobile);
+  }
+
+  .about-editorial__eyebrow {
+    font-size: var(--section-eyebrow-size-mobile);
+  }
+
+  .about-editorial__eyebrow::before {
+    width: var(--section-eyebrow-line-width-mobile);
+  }
+
+  .about-editorial__grid {
+    padding-top: 42px;
+    gap: 48px;
+  }
+
+  .about-editorial__title {
+    font-size: var(--section-title-size-mobile);
+    line-height: var(--section-title-line-height-mobile);
+  }
+
+  .about-editorial__copy {
+    margin-top: 24px;
+    font-size: var(--section-copy-size-mobile);
+  }
+
+  .about-editorial__metrics {
+    grid-template-columns: 1fr;
+    margin-top: 40px;
+  }
+
+  .about-editorial__metric {
+    min-height: 0;
+    padding: 24px 0;
+    display: grid;
+    grid-template-columns: 112px 1fr;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .about-editorial__metric + .about-editorial__metric {
+    padding-left: 0;
+    border-left: 0;
+    border-top: 1px solid var(--color-border, #e2e8f0);
+  }
+
+  .about-editorial__bottom {
+    grid-template-columns: 1fr;
+    margin-top: 34px;
+  }
+
+
+
+  .about-editorial__slider-shell {
+    width: min(100%, 520px);
+  }
+
+  .about-editorial__slider {
+    border-radius: 28% 18% 27% 20% / 20% 25% 18% 28%;
+  }
+
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .about-editorial__slide,
+  .about-editorial__next,
+  .about-editorial__dot {
+    transition: none;
+  }
+}
+
+
+/* =========================================================
+   ABOUT IMAGE VARIANTS — MODERN CLEAN
+   Direção: moderna, clean, arquitetônica e sofisticada.
+   Sem fundos azuis ou shapes coloridos atrás da fotografia.
+   ========================================================= */
+
+.about-editorial__clip-defs {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.about-editorial__slider-shell {
+  isolation: isolate;
+}
+
+/* Neutraliza qualquer shape decorativo herdado. */
+.about-editorial__slider-shell::before,
+.about-editorial__slider-shell::after {
+  content: none;
+}
+
+.about-editorial__slider {
+  z-index: 1;
+  border: 1px solid rgba(15, 23, 42, 0.065);
+  background: #f5f6f7;
+  box-shadow: 0 24px 64px rgba(15, 23, 42, 0.10);
+  transition:
+    border-radius 520ms cubic-bezier(.22,1,.36,1),
+    clip-path 520ms cubic-bezier(.22,1,.36,1),
+    box-shadow 520ms cubic-bezier(.22,1,.36,1),
+    width 520ms cubic-bezier(.22,1,.36,1);
+}
+
+/* 01 — FLUID BEZIER
+   Curva orgânica precisa, usando a mesma tecnologia SVG do Hero. */
+.about-editorial__visual[data-about-image-variant="fluid-bezier"] .about-editorial__slider {
+  border-radius: 0;
+  -webkit-clip-path: url(#about-clip-fluid-bezier);
+  clip-path: url(#about-clip-fluid-bezier);
+  box-shadow: none;
+}
+
+.about-editorial__visual[data-about-image-variant="fluid-bezier"] .about-editorial__slider-shell {
+  width: min(100%, 560px);
+}
+
+/* 02 — SOFT ARCH
+   Arco contemporâneo, mais baixo e menos clássico. */
+.about-editorial__visual[data-about-image-variant="soft-arch"] .about-editorial__slider-shell {
+  width: min(92%, 525px);
+}
+
+.about-editorial__visual[data-about-image-variant="soft-arch"] .about-editorial__slider {
+  border-radius: 48% 48% 1.1rem 1.1rem / 22% 22% 1.1rem 1.1rem;
+  -webkit-clip-path: none;
+  clip-path: none;
+  box-shadow: 0 26px 66px rgba(15, 23, 42, 0.11);
+}
+
+/* 03 — ARCHITECTURAL
+   Geometria quase reta com um corte diagonal discreto. */
+.about-editorial__visual[data-about-image-variant="architectural"] .about-editorial__slider-shell {
+  width: min(100%, 570px);
+}
+
+.about-editorial__visual[data-about-image-variant="architectural"] .about-editorial__slider {
+  border-radius: .85rem;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 91%, 84% 100%, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 91%, 84% 100%, 0 100%);
+  box-shadow: 0 20px 54px rgba(15, 23, 42, 0.085);
+}
+
+/* 04 — EDITORIAL CUT
+   Base cortada por Bézier; resto da imagem permanece sóbrio e reto. */
+.about-editorial__visual[data-about-image-variant="editorial-cut"] .about-editorial__slider-shell {
+  width: min(100%, 565px);
+}
+
+.about-editorial__visual[data-about-image-variant="editorial-cut"] .about-editorial__slider {
+  border-radius: 1rem 1rem 0 0;
+  -webkit-clip-path: url(#about-clip-editorial-cut);
+  clip-path: url(#about-clip-editorial-cut);
+  box-shadow: none;
+}
+
+/* 05 — SOFT CAPSULE
+   Cápsula menos extrema, larga e sofisticada. */
+.about-editorial__visual[data-about-image-variant="soft-capsule"] .about-editorial__slider-shell {
+  width: min(84%, 485px);
+}
+
+.about-editorial__visual[data-about-image-variant="soft-capsule"] .about-editorial__slider {
+  aspect-ratio: 3 / 4.4;
+  border-radius: 46% 46% 46% 46% / 16% 16% 16% 16%;
+  -webkit-clip-path: none;
+  clip-path: none;
+  box-shadow: 0 26px 66px rgba(15, 23, 42, 0.10);
+}
+
+/* 06 — MINIMAL FRAME
+   Forma quase reta, moldura finíssima e muito respiro. */
+.about-editorial__visual[data-about-image-variant="minimal-frame"] .about-editorial__slider-shell {
+  width: min(94%, 535px);
+  padding: .58rem;
+  border: 1px solid rgba(15, 23, 42, 0.09);
+  border-radius: 1.35rem;
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 18px 50px rgba(15, 23, 42, 0.045);
+}
+
+.about-editorial__visual[data-about-image-variant="minimal-frame"] .about-editorial__slider {
+  border-radius: .85rem;
+  -webkit-clip-path: none;
+  clip-path: none;
+  border-color: rgba(15, 23, 42, 0.055);
+  box-shadow: none;
+}
+
+/* Pequeno refinamento de enquadramento por silhueta. */
+.about-editorial__visual[data-about-image-variant="soft-arch"] .about-editorial__slide:nth-child(1) img {
+  object-position: 66% 48%;
+}
+
+.about-editorial__visual[data-about-image-variant="soft-capsule"] .about-editorial__slide:nth-child(1) img {
+  object-position: 64% 50%;
+}
+
+.about-editorial__visual[data-about-image-variant="editorial-cut"] .about-editorial__slide img {
+  transform: scale(1.015);
+}
+
+/* Controles permanecem leves e separados da silhueta. */
+.about-editorial__story-control {
+  z-index: 6;
+}
+
+.about-editorial__dots {
+  position: relative;
+  z-index: 6;
+}
+
+/* Tablet/mobile: preserva identidade sem recortes frágeis. */
+@media (max-width: 1024px) {
+  .about-editorial__visual[data-about-image-variant="fluid-bezier"] .about-editorial__slider-shell,
+  .about-editorial__visual[data-about-image-variant="architectural"] .about-editorial__slider-shell,
+  .about-editorial__visual[data-about-image-variant="editorial-cut"] .about-editorial__slider-shell {
+    width: min(92%, 560px);
+  }
+}
+
+@media (max-width: 700px) {
+  .about-editorial__visual[data-about-image-variant="soft-arch"] .about-editorial__slider {
+    border-radius: 46% 46% .9rem .9rem / 18% 18% .9rem .9rem;
+  }
+
+  .about-editorial__visual[data-about-image-variant="soft-capsule"] .about-editorial__slider-shell {
+    width: min(88%, 455px);
+  }
+
+  .about-editorial__visual[data-about-image-variant="minimal-frame"] .about-editorial__slider-shell {
+    width: min(94%, 500px);
+    padding: .4rem;
+  }
+
+  .about-editorial__visual[data-about-image-variant="architectural"] .about-editorial__slider {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 94%, 86% 100%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 94%, 86% 100%, 0 100%);
+  }
+}
+
+/* =========================================================
+   ABOUT INFO VARIANTS
+   Conteúdo institucional compacto para o lado esquerdo.
+   Preview: ?about-info=<variante>
+   ========================================================= */
+
+.about-editorial__info {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: clamp(2.5rem, 4.6vw, 4.4rem);
+  border-top: 1px solid rgba(15, 23, 42, .11);
+  border-bottom: 1px solid rgba(15, 23, 42, .11);
+}
+
+.about-editorial__info-item {
+  position: relative;
+  min-width: 0;
+  padding: clamp(1.45rem, 2.2vw, 2rem) clamp(1rem, 1.8vw, 1.55rem) clamp(1.55rem, 2.4vw, 2.15rem) 0;
+}
+
+.about-editorial__info-item + .about-editorial__info-item {
+  padding-left: clamp(1rem, 2vw, 1.8rem);
+  border-left: 1px solid rgba(15, 23, 42, .09);
+}
+
+.about-editorial__info-index {
+  display: block;
+  margin-bottom: clamp(1rem, 1.7vw, 1.45rem);
+  color: rgba(15, 23, 42, .38);
+  font-size: .62rem;
+  font-weight: 750;
+  letter-spacing: .14em;
+}
+
+.about-editorial__info-title {
+  display: block;
+  color: var(--color-text-primary, #172235);
+  font-family: var(--font-display, "Manrope", sans-serif);
+  font-size: clamp(1.05rem, 1.35vw, 1.34rem);
+  font-weight: 650;
+  letter-spacing: -.035em;
+  line-height: 1.15;
+}
+
+.about-editorial__info-text {
+  max-width: 13.5rem;
+  margin: .72rem 0 0;
+  color: var(--color-text-secondary, #64748b);
+  font-size: clamp(.78rem, .82vw, .88rem);
+  line-height: 1.58;
+}
+
+/* 01 — Vision / Mission / Values: grid institucional elegante. */
+.about-editorial__info[data-about-info-variant="vision-mission-values"] .about-editorial__info-title {
+  color: var(--color-primary, #2563eb);
+}
+
+/* 06 — Philosophy: uma linha editorial contínua. */
+.about-editorial__info[data-about-info-variant="philosophy"] {
+  grid-template-columns: 1fr;
+  border-bottom: 0;
+}
+
+.about-editorial__info[data-about-info-variant="philosophy"] .about-editorial__info-item {
+  display: grid;
+  grid-template-columns: 2.2rem minmax(7rem, .65fr) minmax(0, 1fr);
+  gap: 1rem;
+  align-items: baseline;
+  padding: 1rem 0;
+  border-left: 0;
+  border-bottom: 1px solid rgba(15, 23, 42, .085);
+}
+
+.about-editorial__info[data-about-info-variant="philosophy"] .about-editorial__info-index,
+.about-editorial__info[data-about-info-variant="philosophy"] .about-editorial__info-text {
+  margin: 0;
+}
+
+.about-editorial__info[data-about-info-variant="philosophy"] .about-editorial__info-text {
+  max-width: none;
+}
+
+@media (max-width: 700px) {
+  .about-editorial__info {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .about-editorial__info-item {
+    padding: 1.25rem 0;
+  }
+
+  .about-editorial__info-item + .about-editorial__info-item {
+    padding-left: 0;
+    border-left: 0;
+    border-top: 1px solid rgba(15, 23, 42, .085);
+  }
+
+
+  .about-editorial__info[data-about-info-variant="philosophy"] .about-editorial__info-item {
+    grid-template-columns: 2rem 1fr;
+  }
+
+  .about-editorial__info[data-about-info-variant="philosophy"] .about-editorial__info-text {
+    grid-column: 2;
+  }
+}
+
+/* =========================================================
+   ABOUT — STORY CONTROL DESKTOP OFFSET
+   Afasta o controle lateral da borda direita somente no desktop.
+   O posicionamento continua relativo ao slider, preservando as
+   variações de imagem e o comportamento responsivo existente.
+   ========================================================= */
+@media (min-width: 80.0625rem) {
+  .about-editorial__story-control {
+    right: clamp(-3.35rem, -3.4vw, -2.75rem);
+  }
+}

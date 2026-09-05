@@ -1,0 +1,50 @@
+PROPRIETARY SOFTWARE LICENSE — ALL RIGHTS RESERVED
+
+Copyright © 2026 Bruno Mariano. All rights reserved.
+
+1. OWNERSHIP
+This framework, including its original source code, architecture, components, styles, scripts, documentation, design system, presets, configuration patterns and original assets (collectively, the “Framework”), is proprietary material owned by Bruno Mariano, except for Third-Party Components identified in THIRD_PARTY_NOTICES.md.
+
+2. NO PUBLIC LICENSE GRANTED
+Possession of a copy of the Framework does not grant any public, open-source or implied license. No rights are granted except those expressly authorized in writing by the copyright holder or stated in a separate commercial agreement.
+
+3. PERMITTED USE BY AN AUTHORIZED LICENSEE
+An authorized licensee may use and modify the Framework only within the scope expressly granted by the copyright holder. Unless a separate written agreement states otherwise, authorization to use a finished website does not transfer ownership of the Framework itself.
+
+4. CLIENT DELIVERABLES
+A finished website or landing page created with the Framework may be delivered to a client when authorized by the copyright holder. The client may operate, host and maintain that specific deliverable for its intended business use, but receives no independent right to extract, republish, resell, sublicense, distribute, commercialize as a template, or reuse the underlying Framework to create unrelated products or projects unless expressly authorized in writing.
+
+5. PROHIBITED USES
+Without prior written permission, no person may:
+(a) sell, sublicense, rent, lease, publish, upload, share or redistribute the Framework or a substantial portion of it as source code, template, starter kit, boilerplate, theme, component pack or competing framework;
+(b) place the Framework or substantial portions of it in a public repository, marketplace, download library, course bundle or template catalog;
+(c) remove, conceal or falsify copyright, authorship, license or third-party notices;
+(d) claim authorship or ownership of the Framework itself;
+(e) use the Framework as the basis of a website-builder, template generator, white-label framework product or similar redistribution service without written authorization; or
+(f) grant rights to another party that exceed the rights the licensee actually received.
+
+6. THIRD-PARTY COMPONENTS
+Third-Party Components are not relicensed by this document. They remain governed by their respective licenses and notices. See THIRD_PARTY_NOTICES.md. If a third-party license conflicts with this license for that third-party component, the third-party license controls only for that component.
+
+7. TRADEMARKS, BRANDS, CONTENT AND CLIENT ASSETS
+Names, logos, trademarks, photographs, copy, client materials and other assets may have separate owners and permissions. Inclusion in a project does not transfer ownership or grant reuse rights beyond the applicable authorization.
+
+8. COPYRIGHT NOTICE
+Authorized copies of the Framework source must preserve this LICENSE file, COPYRIGHT.md and THIRD_PARTY_NOTICES.md, unless the copyright holder expressly agrees otherwise in writing.
+
+9. NO WARRANTY
+TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, THE FRAMEWORK IS PROVIDED “AS IS”, WITHOUT WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED. THE USER IS RESPONSIBLE FOR TESTING, SECURITY, PRIVACY, ACCESSIBILITY, LEGAL COMPLIANCE, BACKUPS, DEPLOYMENT AND FITNESS FOR THE INTENDED USE.
+
+10. LIMITATION OF LIABILITY
+TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, THE COPYRIGHT HOLDER SHALL NOT BE LIABLE FOR INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL OR PUNITIVE DAMAGES ARISING FROM UNAUTHORIZED OR LICENSED USE OF THE FRAMEWORK, EXCEPT WHERE SUCH LIMITATION IS PROHIBITED BY LAW.
+
+11. TERMINATION
+Any rights granted under a separate authorization or agreement may terminate upon material breach, subject to the terms of that authorization or agreement and applicable law. Upon termination, use and distribution must cease except to the extent otherwise required or permitted by law or written agreement.
+
+12. GOVERNING TERMS
+This license is intended to operate under the laws of Brazil. Any project-specific commercial agreement, statement of work or written license signed by the parties prevails over this generic file to the extent of a conflict.
+
+13. WRITTEN PERMISSION
+Permissions, exceptions and expanded commercial rights must be granted in writing by the copyright holder.
+
+This file is a licensing baseline for the Framework and is not a substitute for project-specific legal advice or a signed client contract.

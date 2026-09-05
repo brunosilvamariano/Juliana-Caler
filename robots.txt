@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+# Sitemap: adicionar a URL absoluta quando o domínio final estiver definido.

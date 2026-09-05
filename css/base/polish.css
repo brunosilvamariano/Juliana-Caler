@@ -1,0 +1,26 @@
+/* =========================================================
+   POLISH — REGRAS TRANSVERSAIS DE MAIOR PRIORIDADE INTERNA
+   ---------------------------------------------------------
+   Esta camada preserva intenções de composição que antes
+   dependiam de marcador de prioridade. A customização do projeto continua
+   acima dela através de css/custom.css.
+   ========================================================= */
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto;
+}
+
+.sidebar__link,
+.about-editorial__next,
+.services-editorial__arrow,
+.faq-editorial button,
+.contact-editorial a {
+  transition-timing-function: var(--motion-ease);
+}
+
+.about-editorial__slider-shell::before,
+.about-editorial__slider-shell::after {
+  content: none;
+}
+
+

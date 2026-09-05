@@ -1,0 +1,61 @@
+{
+  "eyebrow": "02 / Sobre",
+  "metaLines": [
+    "Bruna Gesser (CRP 12/27976)"
+  ],
+  "titleLines": [
+    {
+      "before": "Cuidado que",
+      "accent": "transforma.",
+      "after": ""
+    }
+  ],
+  "description": "Bruna Gesser é psicóloga clínica em Joinville e realiza psicoterapia com adolescentes e adultos. O atendimento considera a história, o momento e as necessidades de cada pessoa, em um espaço de escuta e cuidado.",
+  "quote": "Eu aprendi a nadar tão bem, que ninguém mais vem ver se eu estou me afogando ou não.",
+  "slider": {
+    "images": [
+      {
+        "src": "assets/images/about/about-01.webp",
+        "alt": "Bruna Gesser em retrato profissional"
+      },
+      {
+        "src": "assets/images/about/about-02.webp",
+        "alt": "Bruna Gesser, psicóloga clínica em Joinville"
+      },
+      {
+        "src": "assets/images/about/about-03.webp",
+        "alt": "Bruna Gesser em ambiente de atendimento"
+      }
+    ]
+  },
+  "infoVariants": {
+    "vision-mission-values": [
+      {
+        "title": "Escuta",
+        "text": "Um espaço para falar sobre o que você sente com liberdade e respeito."
+      },
+      {
+        "title": "Processo",
+        "text": "Acompanhamento acontece de forma singular, respeitando seu tempo e sua história."
+      },
+      {
+        "title": "Cuidado",
+        "text": "Compreensão, reflexão e construção de novas possibilidades."
+      }
+    ],
+    "philosophy": [
+      {
+        "title": "Escuta",
+        "text": "Um espaço para falar sobre o que você sente com liberdade e respeito."
+      },
+      {
+        "title": "Processo",
+        "text": "Acompanhamento acontece de forma singular, respeitando seu tempo e sua história."
+      },
+      {
+        "title": "Cuidado",
+        "text": "Compreensão, reflexão e construção de novas possibilidades."
+      }
+    ]
+  }
+}

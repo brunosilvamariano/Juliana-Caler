@@ -1,0 +1,44 @@
+{
+  "meta": {
+    "title": "Bruna Gesser | Psicóloga Clínica em Joinville",
+    "description": "Bruna Gesser é psicóloga clínica em Joinville, com psicoterapia para adolescentes e adultos. Entre em contato para informações e agendamento.",
+    "language": "pt-BR"
+  },
+  "brand": {
+    "name": "Bruna Gesser",
+    "logo": "assets/images/logo/logo-texto.svg",
+    "icon": "assets/images/logo/logo-icon.svg",
+    "homeHref": "#inicio"
+  },
+  "sidebar": {
+    "sectionLabel": "Navegação",
+    "availabilityLabel": "Psicologia clínica em Joinville"
+  },
+  "contact": {
+    "whatsappUrl": "https://wa.me/5547992302828?text=Ol%C3%A1%2C%20Bruna%21%20Conheci%20seu%20trabalho%20pelo%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20a%20psicoterapia%20e%20os%20hor%C3%A1rios%20dispon%C3%ADveis%20para%20atendimento."
+  },
+  "social": [
+    {
+      "label": "Instagram",
+      "href": "https://www.instagram.com/psicologa.brunagesser/"
+    },
+    {
+      "label": "TikTok",
+      "href": "https://www.tiktok.com/@psicologa.brunagesser"
+    },
+    {
+      "label": "WhatsApp",
+      "href": "https://wa.me/5547992302828?text=Ol%C3%A1%2C%20Bruna%21%20Conheci%20seu%20trabalho%20pelo%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20a%20psicoterapia%20e%20os%20hor%C3%A1rios%20dispon%C3%ADveis%20para%20atendimento."
+    },
+    {
+      "label": "Localização",
+      "href": "https://www.google.com/maps?q=Bruna+Gesser+Psic%C3%B3loga+Cl%C3%ADnica+Joinville+SC"
+    }
+  ],
+  "footer": {
+    "legalPrimary": "© 2026 Bruna Gesser",
+    "legalSecondary": "Todos os direitos reservados.",
+    "developerName": "Bruno Mariano",
+    "developerHref": "https://brunomarianosilva.com.br/"
+  }
+}

@@ -1,0 +1,179 @@
+/* =========================================================
+   CTA VARIANTS — CURADORIA ATIVA
+   ---------------------------------------------------------
+   Duas identidades oficiais para o CTA principal:
+   - calendar: CTA premium de agendamento
+   - minimal: CTA editorial leve
+
+   Preview: ?cta=calendar | ?cta=minimal
+   A sidebar é a composição-base; o top-dock recebe apenas
+   adaptação de espaço em top-header-adapter.css.
+   ========================================================= */
+
+.sidebar__contact {
+  position: relative;
+  display: grid;
+  gap: .72rem;
+  padding: .76rem;
+  overflow: hidden;
+}
+
+.sidebar__contact-status {
+  display: flex;
+  align-items: center;
+  gap: .48rem;
+  min-height: 1rem;
+  color: var(--slate-500);
+  font-size: .53rem;
+  font-weight: var(--fw-semibold);
+  letter-spacing: .045em;
+}
+
+.sidebar__contact-status-dot {
+  width: .42rem;
+  height: .42rem;
+  flex: 0 0 .42rem;
+  border-radius: 50%;
+  background: var(--color-success);
+  box-shadow: 0 0 0 .22rem rgba(34,197,94,.10);
+}
+
+.sidebar__contact-main {
+  min-width: 0;
+  display: grid;
+  grid-template-columns: 2.65rem minmax(0,1fr) auto;
+  align-items: center;
+  gap: .72rem;
+}
+
+.sidebar__contact-avatar {
+  width: 2.65rem;
+  height: 2.65rem;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  border: 1px solid rgba(15,23,42,.08);
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 6px 16px rgba(15,23,42,.07);
+}
+
+.sidebar__contact-avatar img {
+  width: 78%;
+  height: 78%;
+  object-fit: contain;
+}
+
+.sidebar__contact-copy {
+  min-width: 0;
+  display: grid;
+  gap: .18rem;
+}
+
+.sidebar__contact-label {
+  overflow: hidden;
+  color: var(--slate-900);
+  font-size: .72rem;
+  font-weight: var(--fw-semibold);
+  letter-spacing: -.015em;
+  text-transform: none;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.sidebar__contact-email {
+  overflow: hidden;
+  color: var(--slate-400);
+  font-size: .58rem;
+  font-weight: var(--fw-medium);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.sidebar__contact-arrow {
+  width: 1.85rem;
+  height: 1.85rem;
+  flex: 0 0 1.85rem;
+}
+
+/* 01 — CALENDAR
+   Pill premium com avatar, contexto e ação explícita. */
+.sidebar[data-sidebar-cta="calendar"] .sidebar__contact {
+  gap: .45rem;
+  padding: .72rem .75rem;
+  border-color: rgba(15,23,42,.08);
+  border-radius: 999px;
+  background: #fff;
+  box-shadow: 0 10px 26px rgba(15,23,42,.07);
+}
+
+.sidebar[data-sidebar-cta="calendar"] .sidebar__contact-status {
+  display: none;
+}
+
+.sidebar[data-sidebar-cta="calendar"] .sidebar__contact-avatar {
+  width: 2.35rem;
+  height: 2.35rem;
+  background: #f1f5f9;
+  box-shadow: none;
+}
+
+.sidebar[data-sidebar-cta="calendar"] .sidebar__contact-main {
+  grid-template-columns: 2.35rem minmax(0,1fr) auto;
+}
+
+.sidebar[data-sidebar-cta="calendar"] .sidebar__contact-arrow {
+  background: #111827;
+  box-shadow: none;
+}
+
+/* 02 — MINIMAL
+   Sem status, avatar ou card pesado; mantém leitura editorial. */
+.sidebar[data-sidebar-cta="minimal"] .sidebar__contact {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  padding: .75rem .25rem;
+  border: 0;
+  border-top: 1px solid rgba(15,23,42,.08);
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.sidebar[data-sidebar-cta="minimal"] .sidebar__contact-status,
+.sidebar[data-sidebar-cta="minimal"] .sidebar__contact-avatar {
+  display: none;
+}
+
+.sidebar[data-sidebar-cta="minimal"] .sidebar__contact-main {
+  width: 100%;
+  grid-template-columns: minmax(0,1fr) auto;
+}
+
+.sidebar[data-sidebar-cta="minimal"] .sidebar__contact-arrow {
+  background: transparent;
+  box-shadow: none;
+}
+
+.sidebar[data-sidebar-cta="minimal"] .sidebar__contact-arrow img {
+  filter: none;
+  opacity: .65;
+}
+
+.sidebar[data-sidebar-cta="calendar"] .sidebar__contact:hover {
+  transform: translateY(-2px);
+}
+
+.sidebar[data-sidebar-cta="minimal"] .sidebar__contact:hover {
+  background: transparent;
+  box-shadow: none;
+  transform: translateX(.15rem);
+}
+
+/* Mobile/drawer: as duas identidades permanecem completas. */
+@media (max-width: 63.99rem) {
+  body[data-header-variant] .sidebar[data-sidebar-cta] .sidebar__contact {
+    min-width: 0;
+  }
+}

@@ -1,0 +1,230 @@
+/* =========================================================
+   TOP DOCK CTA — ADAPTADOR RESPONSIVO
+   ---------------------------------------------------------
+   Regra: o CTA continua dono do próprio design.
+   O top-dock adapta somente slot, escala e encaixe.
+   Variantes oficiais: calendar e minimal.
+   ========================================================= */
+
+@media (min-width: 64rem) {
+  /* Slot padrão do CTA no header horizontal. */
+  body[data-header-variant="top-dock"] .sidebar__inner {
+    grid-template-columns: minmax(7rem, 11rem) minmax(0, 1fr) minmax(15.5rem, 17.5rem);
+    gap: clamp(.65rem, 1.3vw, 1.35rem);
+    padding-block: .45rem;
+  }
+
+  body[data-header-variant="top-dock"]
+    .sidebar[data-sidebar-cta="minimal"] .sidebar__inner {
+    grid-template-columns: minmax(7rem, 11rem) minmax(0, 1fr) minmax(12rem, 14rem);
+  }
+
+  body[data-header-variant="top-dock"] .sidebar__footer {
+    width: 100%;
+    min-width: 0;
+    height: auto;
+    margin: 0 0 0 auto;
+    padding: 0;
+    display: block;
+    align-self: center;
+    justify-self: end;
+  }
+
+  body[data-header-variant="top-dock"] .sidebar__footer > .sidebar__availability,
+  body[data-header-variant="top-dock"] .sidebar__footer > .sidebar__socials {
+    display: none;
+  }
+
+  body[data-header-variant="top-dock"] .sidebar__contact {
+    box-sizing: border-box;
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    min-height: 0;
+    margin: 0;
+    transform: none;
+  }
+
+  body[data-header-variant="top-dock"] .sidebar__contact:hover {
+    transform: translateY(-1px);
+  }
+
+  body[data-header-variant="top-dock"] .sidebar__contact-label {
+    max-width: 100%;
+    overflow: hidden;
+    line-height: 1.15;
+    text-overflow: clip;
+    white-space: nowrap;
+  }
+
+  /* CALENDAR — preserva avatar + copy + círculo dentro do dock. */
+  body[data-header-variant="top-dock"]
+    .sidebar[data-sidebar-cta="calendar"] .sidebar__contact {
+    display: block;
+    padding: .42rem .5rem;
+    border: 1px solid rgba(15,23,42,.08);
+    border-radius: 999px;
+    background: #fff;
+    color: var(--slate-900);
+    box-shadow: 0 10px 26px rgba(15,23,42,.07);
+  }
+
+  body[data-header-variant="top-dock"]
+    .sidebar[data-sidebar-cta="calendar"] .sidebar__contact-status {
+    display: none;
+  }
+
+  body[data-header-variant="top-dock"]
+    .sidebar[data-sidebar-cta="calendar"] .sidebar__contact-main {
+    display: grid;
+    grid-template-columns: 2.25rem minmax(0,1fr) 2rem;
+    align-items: center;
+    gap: .58rem;
+  }
+
+  body[data-header-variant="top-dock"]
+    .sidebar[data-sidebar-cta="calendar"] .sidebar__contact-avatar {
+    display: grid;
+    width: 2.25rem;
+    height: 2.25rem;
+    background: #f1f5f9;
+    box-shadow: none;
+  }
+
+  body[data-header-variant="top-dock"]
+    .sidebar[data-sidebar-cta="calendar"] .sidebar__contact-copy {
+    gap: .1rem;
+  }
+
+  body[data-header-variant="top-dock"]
+    .sidebar[data-sidebar-cta="calendar"] .sidebar__contact-label {
+    color: var(--slate-900);
+    font-size: .72rem;
+  }
+
+  body[data-header-variant="top-dock"]
+    .sidebar[data-sidebar-cta="calendar"] .sidebar__contact-email {
+    display: block;
+    color: var(--slate-400);
+    font-size: .55rem;
+    line-height: 1.15;
+  }
+
+  body[data-header-variant="top-dock"]
+    .sidebar[data-sidebar-cta="calendar"] .sidebar__contact-arrow {
+    width: 2rem;
+    height: 2rem;
+    min-width: 2rem;
+    border-radius: 50%;
+    background: #111827;
+    box-shadow: none;
+  }
+
+  /* MINIMAL — mantém leveza; somente encaixa no slot menor do dock. */
+  body[data-header-variant="top-dock"]
+    .sidebar[data-sidebar-cta="minimal"] .sidebar__contact {
+    width: 100%;
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: .65rem;
+    padding: .5rem .12rem;
+    border: 0;
+    border-top: 1px solid rgba(15,23,42,.08);
+    border-radius: 0;
+    background: transparent;
+    color: var(--slate-900);
+    box-shadow: none;
+  }
+
+  body[data-header-variant="top-dock"]
+    .sidebar[data-sidebar-cta="minimal"] .sidebar__contact-status,
+  body[data-header-variant="top-dock"]
+    .sidebar[data-sidebar-cta="minimal"] .sidebar__contact-avatar {
+    display: none;
+  }
+
+  body[data-header-variant="top-dock"]
+    .sidebar[data-sidebar-cta="minimal"] .sidebar__contact-main {
+    width: 100%;
+    display: grid;
+    grid-template-columns: minmax(0,1fr) 1.8rem;
+    align-items: center;
+    gap: .5rem;
+  }
+
+  body[data-header-variant="top-dock"]
+    .sidebar[data-sidebar-cta="minimal"] .sidebar__contact-copy {
+    gap: .08rem;
+  }
+
+  body[data-header-variant="top-dock"]
+    .sidebar[data-sidebar-cta="minimal"] .sidebar__contact-label {
+    color: var(--slate-900);
+    font-size: .7rem;
+  }
+
+  body[data-header-variant="top-dock"]
+    .sidebar[data-sidebar-cta="minimal"] .sidebar__contact-email {
+    display: block;
+    color: var(--slate-400);
+    font-size: .53rem;
+    line-height: 1.1;
+  }
+
+  body[data-header-variant="top-dock"]
+    .sidebar[data-sidebar-cta="minimal"] .sidebar__contact-arrow {
+    width: 1.8rem;
+    height: 1.8rem;
+    min-width: 1.8rem;
+    border-radius: 50%;
+    background: transparent;
+    box-shadow: none;
+  }
+
+  body[data-header-variant="top-dock"]
+    .sidebar[data-sidebar-cta="minimal"] .sidebar__contact-arrow img {
+    filter: none;
+    opacity: .65;
+  }
+}
+
+/* Desktop compacto: reduz o slot sem perder a identidade. */
+@media (min-width: 64rem) and (max-width: 82rem) {
+  body[data-header-variant="top-dock"] .sidebar__inner {
+    grid-template-columns: minmax(6.5rem, 8rem) minmax(0,1fr) 15.25rem;
+    gap: .55rem;
+  }
+
+  body[data-header-variant="top-dock"]
+    .sidebar[data-sidebar-cta="minimal"] .sidebar__inner {
+    grid-template-columns: minmax(6.5rem, 8rem) minmax(0,1fr) 11.75rem;
+  }
+
+  body[data-header-variant="top-dock"] .sidebar__nav {
+    gap: 0;
+  }
+
+  body[data-header-variant="top-dock"] .sidebar__link {
+    padding-inline: .42rem;
+  }
+
+  body[data-header-variant="top-dock"]
+    .sidebar[data-sidebar-cta="calendar"] .sidebar__contact-main {
+    grid-template-columns: 2rem minmax(0,1fr) 1.85rem;
+    gap: .42rem;
+  }
+
+  body[data-header-variant="top-dock"]
+    .sidebar[data-sidebar-cta="calendar"] .sidebar__contact-avatar {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  body[data-header-variant="top-dock"]
+    .sidebar[data-sidebar-cta="calendar"] .sidebar__contact-arrow {
+    width: 1.85rem;
+    height: 1.85rem;
+    min-width: 1.85rem;
+  }
+}

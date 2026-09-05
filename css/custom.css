@@ -1,0 +1,22 @@
+/* =========================================================
+   CUSTOM — PERSONALIZAÇÃO DO PROJETO
+   ---------------------------------------------------------
+   Este arquivo é carregado DEPOIS de css/app.css e não pertence
+   a nenhuma @layer. Portanto, regras normais escritas aqui vencem
+   as regras normais do framework, mesmo quando a variante interna
+   usa um seletor mais específico. Não use marcador de prioridade.
+
+   Exemplos (deixe comentado quando não usar):
+
+   .hero-editorial__title {
+     max-width: 14ch;
+   }
+
+   .hero-editorial__text {
+     max-width: 50ch;
+   }
+
+   :root {
+     --color-primary: #2563eb;
+   }
+   ========================================================= */

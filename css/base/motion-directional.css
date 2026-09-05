@@ -1,0 +1,37 @@
+/* =========================================================
+   MOTION DIRECTIONAL — clipping boundaries for GSAP v3
+   Keeps offscreen entrances contained inside each section.
+   ========================================================= */
+
+.motion-enabled .hero-editorial,
+.motion-enabled .about-editorial,
+.motion-enabled .services-editorial,
+.motion-enabled .projects-editorial,
+.motion-enabled .faq-editorial,
+.motion-enabled .contact-editorial {
+  overflow-x: clip;
+}
+
+.motion-enabled .hero-editorial__content,
+.motion-enabled .about-editorial__content,
+.motion-enabled .services-editorial__intro,
+.motion-enabled .projects-editorial__intro,
+.motion-enabled .faq-editorial__intro,
+.motion-enabled .contact-editorial__intro,
+.motion-enabled .services-editorial__list,
+.motion-enabled .projects-editorial__grid,
+.motion-enabled .faq-editorial__accordion,
+.motion-enabled .contact-editorial__channels {
+  isolation: isolate;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .motion-enabled .hero-editorial,
+  .motion-enabled .about-editorial,
+  .motion-enabled .services-editorial,
+  .motion-enabled .projects-editorial,
+  .motion-enabled .faq-editorial,
+  .motion-enabled .contact-editorial {
+    overflow-x: visible;
+  }
+}

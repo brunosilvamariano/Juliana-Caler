@@ -1,0 +1,189 @@
+/* =========================================================
+   TOPBAR — FLUID
+   Camada contextual da navegação.
+   A sidebar navega; a topbar informa onde o usuário está
+   e concentra ações globais, sem repetir o menu lateral.
+   ========================================================= */
+
+.topbar {
+  position: fixed;
+  z-index: var(--z-sticky);
+  top: var(--sidebar-offset);
+  left: calc(var(--sidebar-width) + (var(--sidebar-offset) * 3));
+  right: var(--sidebar-offset);
+  height: var(--topbar-height);
+  display: flex;
+  align-items: center;
+  gap: var(--space-5);
+  padding: 0.48rem 0.55rem 0.48rem 1.2rem;
+  border: 1px solid rgba(15, 23, 42, 0.07);
+  border-radius: var(--radius-pill);
+  background: rgba(255, 255, 255, 0.64);
+  box-shadow: 0 10px 35px rgba(15, 23, 42, 0.045);
+  backdrop-filter: blur(18px) saturate(135%);
+  -webkit-backdrop-filter: blur(18px) saturate(135%);
+  transition:
+    left var(--duration-base) var(--ease-out),
+    background var(--transition-ui),
+    border-color var(--transition-ui),
+    box-shadow var(--transition-ui),
+    transform var(--transition-premium);
+}
+
+body.sidebar-collapsed .topbar {
+  left: calc(var(--sidebar-collapsed-width) + (var(--sidebar-offset) * 3));
+}
+
+.topbar.is-scrolled {
+  border-color: rgba(15, 23, 42, 0.09);
+  background: rgba(255, 255, 255, 0.88);
+  box-shadow: 0 14px 42px rgba(15, 23, 42, 0.07);
+}
+
+/* ---------- Contexto atual ---------- */
+.topbar__context {
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--font-body);
+  font-size: 0.68rem;
+  font-weight: var(--fw-semibold);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.topbar__index {
+  color: var(--color-primary);
+  font-weight: var(--fw-bold);
+}
+
+.topbar__divider,
+.topbar__label {
+  color: var(--slate-500);
+}
+
+.topbar__label {
+  overflow: hidden;
+  max-width: 12rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* ---------- Progresso ---------- */
+.topbar__progress {
+  flex: 1 1 auto;
+  min-width: 4rem;
+  height: 1px;
+  overflow: hidden;
+  border-radius: var(--radius-pill);
+  background: rgba(15, 23, 42, 0.08);
+}
+
+.topbar__progress-bar {
+  width: 0%;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--blue-500), var(--blue-700));
+  transition: width 120ms linear;
+}
+
+/* ---------- Ações globais ---------- */
+.topbar__actions {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.topbar__location {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  min-height: 2.65rem;
+  padding: 0 0.7rem;
+  border: 0;
+  background: transparent;
+  color: var(--slate-600);
+  font-family: var(--font-body);
+  font-size: 0.66rem;
+  font-weight: var(--fw-semibold);
+  letter-spacing: 0.05em;
+}
+
+.topbar__location-dot {
+  width: 0.38rem;
+  height: 0.38rem;
+  flex: 0 0 auto;
+  border-radius: 50%;
+  background: var(--color-primary);
+  box-shadow: 0 0 0 0.22rem color-mix(in srgb, var(--color-primary) 10%, transparent);
+}
+
+.topbar__cta {
+  min-height: 2.7rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0 1rem 0 1.05rem;
+  border: 1px solid rgba(15, 23, 42, 0.07);
+  border-radius: var(--radius-pill);
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 7px 20px rgba(15, 23, 42, 0.06);
+  color: var(--slate-900);
+  font-size: 0.68rem;
+  font-weight: var(--fw-semibold);
+  text-decoration: none;
+  transition:
+    color var(--transition-ui),
+    background var(--transition-ui),
+    border-color var(--transition-ui),
+    box-shadow var(--transition-ui),
+    transform var(--transition-ui);
+}
+
+.topbar__cta img {
+  width: 0.92rem;
+  height: 0.92rem;
+  transition: transform var(--transition-premium);
+}
+
+.topbar__cta:hover {
+  border-color: var(--color-primary);
+  background: var(--color-primary);
+  box-shadow: 0 10px 24px color-mix(in srgb, var(--color-primary) 18%, transparent);
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+.topbar__cta:hover img {
+  filter: brightness(0) invert(1);
+  transform: translate(0.12rem, -0.12rem);
+}
+
+/* ---------- Mobile ----------
+   No mobile a navegação superior já é assumida por .mobile-nav.
+   A topbar contextual some para evitar duplicidade e falta de espaço.
+   ---------- */
+@media (max-width: 63.99rem) {
+  .topbar {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .topbar,
+  .topbar__progress-bar,
+  .topbar__cta,
+  .topbar__cta img {
+    transition: none;
+  }
+}
+
+
+/* Topbar contextual por arquitetura. */
+@media (min-width: 64rem) {
+  body[data-header-variant="top-dock"] .topbar {
+    display: none;
+  }
+}

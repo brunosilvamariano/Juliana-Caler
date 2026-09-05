@@ -1,0 +1,39 @@
+/* =========================================================
+   PREMIUM FOUNDATION — CSS ENTRYPOINT
+   ---------------------------------------------------------
+   A ordem abaixo é a cascata oficial do framework. Todos os
+   estilos internos ficam em camadas; css/custom.css permanece
+   fora de camadas e, por isso, pode sobrescrever qualquer regra
+   normal do framework sem marcador de prioridade.
+   ========================================================= */
+
+@layer vendor, reset, tokens, base, layout, components, sections, polish, accessibility;
+
+@import url("../vendor/lenis/lenis.css") layer(vendor);
+
+@import url("base/reset.css") layer(reset);
+@import url("base/variables.css") layer(tokens);
+@import url("base/typography.css") layer(base);
+@import url("base/motion-directional.css") layer(base);
+@import url("base/global.css") layer(base);
+@import url("base/utilities.css") layer(base);
+
+@import url("layout/app-shell.css") layer(layout);
+
+@import url("components/sidebar/core.css") layer(components);
+@import url("components/sidebar/header-variants.css") layer(components);
+@import url("components/sidebar/cta-variants.css") layer(components);
+@import url("components/sidebar/top-header-adapter.css") layer(components);
+@import url("components/topbar.css") layer(components);
+@import url("components/floating-whatsapp.css") layer(components);
+
+@import url("sections/hero.css") layer(sections);
+@import url("sections/marquee.css") layer(sections);
+@import url("sections/about.css") layer(sections);
+@import url("sections/services.css") layer(sections);
+@import url("sections/projects.css") layer(sections);
+@import url("sections/faq.css") layer(sections);
+@import url("sections/contact.css") layer(sections);
+
+@import url("base/polish.css") layer(polish);
+@import url("base/accessibility.css") layer(accessibility);

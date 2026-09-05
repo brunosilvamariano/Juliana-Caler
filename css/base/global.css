@@ -1,0 +1,118 @@
+/* =========================================================
+   GLOBAL — somente fundação, sem layout de página
+   ========================================================= */
+html {
+  color-scheme: light;
+  background: var(--color-bg);
+  scroll-padding-top: 5rem;
+}
+
+body {
+  background: var(--color-bg);
+  overflow-x: clip;
+}
+
+::selection {
+  color: var(--color-text-inverse);
+  background: var(--color-primary);
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-focus);
+  outline-offset: 3px;
+}
+
+.container {
+  width: min(100% - (var(--container-gutter) * 2), var(--container-xl));
+  margin-inline: auto;
+}
+
+.container--wide {
+  width: min(100% - (var(--container-gutter) * 2), var(--container-max));
+  margin-inline: auto;
+}
+
+.section {
+  padding-block: var(--section-space);
+}
+
+.section--compact { padding-block: var(--section-space-sm); }
+.section--spacious { padding-block: var(--section-space-lg); }
+
+img { font-style: italic; }
+hr { border: 0; border-top: var(--border-1); }
+
+
+/* =========================================================
+   LENIS — infraestrutura de scroll suave
+   ========================================================= */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
+
+/* =========================================================
+   GLOBAL POLISH & MOTION
+   Acabamento global sem alterar a composição aprovada.
+   ========================================================= */
+:root {
+  --motion-fast: 180ms;
+  --motion-base: 360ms;
+  --motion-slow: 720ms;
+  --motion-ease: cubic-bezier(.22,1,.36,1);
+}
+
+html { scroll-behavior: auto; }
+
+body { text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; }
+
+/* Foco acessível e consistente em todos os CTAs */
+a:focus-visible, button:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 4px;
+}
+
+
+/* Microinterações universais sem interferir nos componentes. */
+.sidebar__link,
+.about-editorial__next,
+.services-editorial__arrow,
+.faq-editorial button,
+.contact-editorial a {
+  transition-timing-function: var(--motion-ease);
+}
+
+
+/* Acessibilidade — link de salto para teclado */
+.skip-link {
+  position: fixed;
+  z-index: 9999;
+  top: 0.75rem;
+  left: 0.75rem;
+  padding: 0.72rem 1rem;
+  border-radius: 0.75rem;
+  background: var(--color-text-strong, #172235);
+  color: #fff;
+  font-size: 0.84rem;
+  font-weight: 700;
+  text-decoration: none;
+  transform: translateY(calc(-100% - 1.5rem));
+  transition: transform 180ms ease;
+}
+.skip-link:focus-visible { transform: translateY(0); }

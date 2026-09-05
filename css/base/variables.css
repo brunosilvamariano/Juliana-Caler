@@ -1,0 +1,284 @@
+/* =========================================================
+   PREMIUM FOUNDATION — DESIGN TOKENS
+   Edite este arquivo para mudar a personalidade do projeto.
+   ========================================================= */
+:root {
+  /* ---------- Brand / palette — Bruna Gesser ---------- */
+  /* Lavanda acinzentado: assinatura principal da identidade. */
+  --blue-50:  #f7f5f8;
+  --blue-100: #efedf2;
+  --blue-200: #e1dde6;
+  --blue-300: #cdc7d5;
+  --blue-400: #b8b1c7;
+  --blue-500: #aaa3b7;
+  --blue-600: #837a90;
+  --blue-700: #716a7b;
+  --blue-800: #5d5666;
+  --blue-900: #443f4b;
+  --blue-950: #2c2931;
+
+  /* Off-whites quentes para fundos e superfícies. */
+  --ice-50:  #f7f6f3;
+  --ice-100: #f1efec;
+  --ice-200: #e9e5e0;
+  --ice-300: #ddd7d0;
+
+  /* Neutros aquecidos: texto e estrutura. */
+  --slate-50:  #f8f7f5;
+  --slate-100: #f1efec;
+  --slate-200: #e4e0dc;
+  --slate-300: #d1ccc8;
+  --slate-400: #a8a1a5;
+  --slate-500: #7b757e;
+  --slate-600: #686269;
+  --slate-700: #565158;
+  --slate-800: #3d3940;
+  --slate-900: #2d2a30;
+  --slate-950: #242328;
+
+  /* Apoio / estados. */
+  --green-500: #22c55e;
+  --amber-500: #f59e0b;
+  --red-500:   #ef4444;
+  --cyan-500:  #d8c9bc;
+  --violet-500:#aaa3b7;
+
+  /* Cores nomeadas da marca. */
+  --bruna-ivory: #f7f6f3;
+  --bruna-lavender-soft: #efedf2;
+  --bruna-lavender: #aaa3b7;
+  --bruna-lavender-deep: #716a7b;
+  --bruna-graphite: #242328;
+  --bruna-text: #565158;
+  --bruna-sand: #d8c9bc;
+  --bruna-white: #ffffff;
+
+  /* ---------- Semantic colors ---------- */
+  --color-primary: var(--bruna-lavender-deep);
+  --color-primary-hover: #625b6c;
+  --color-primary-active: #514a5a;
+  --color-primary-soft: var(--bruna-lavender-soft);
+  --color-accent: var(--bruna-sand);
+
+  --color-bg: var(--bruna-ivory);
+  --color-bg-subtle: var(--bruna-lavender-soft);
+  --color-surface: var(--bruna-white);
+  --color-surface-muted: #f3f0ed;
+  --color-surface-inverse: var(--bruna-graphite);
+
+  --color-text: var(--bruna-text);
+  --color-text-strong: var(--bruna-graphite);
+  --color-text-muted: #7b757e;
+  --color-text-inverse: #ffffff;
+
+  --color-border: rgba(36, 35, 40, 0.10);
+  --color-border-strong: rgba(36, 35, 40, 0.18);
+  --color-focus: rgba(113, 106, 123, 0.38);
+
+  --color-success: var(--green-500);
+  --color-warning: var(--amber-500);
+  --color-danger: var(--red-500);
+
+  /* ---------- Typography ---------- */
+  --font-display: "Manrope", "Inter", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-body: "Inter", "Manrope", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+  --fw-extrabold: 800;
+
+  --fs-2xs: clamp(0.68rem, 0.65rem + 0.08vw, 0.75rem);
+  --fs-xs:  clamp(0.75rem, 0.72rem + 0.10vw, 0.82rem);
+  --fs-sm:  clamp(0.86rem, 0.82rem + 0.12vw, 0.95rem);
+  --fs-md:  clamp(1rem, 0.96rem + 0.14vw, 1.08rem);
+  --fs-lg:  clamp(1.12rem, 1.04rem + 0.30vw, 1.28rem);
+  --fs-xl:  clamp(1.28rem, 1.12rem + 0.60vw, 1.62rem);
+  --fs-2xl: clamp(1.6rem, 1.28rem + 1.00vw, 2.15rem);
+  --fs-3xl: clamp(2rem, 1.45rem + 1.70vw, 3rem);
+  --fs-4xl: clamp(2.5rem, 1.65rem + 2.90vw, 4.25rem);
+  --fs-5xl: clamp(3.15rem, 1.75rem + 4.70vw, 6.25rem);
+  --fs-hero: clamp(3.75rem, 2rem + 6.5vw, 8.5rem);
+
+  --lh-tight: 0.96;
+  --lh-heading: 1.05;
+  --lh-body: 1.65;
+  --lh-relaxed: 1.8;
+
+  --tracking-tightest: -0.055em;
+  --tracking-tight: -0.035em;
+  --tracking-normal: 0;
+  --tracking-wide: 0.08em;
+  --tracking-wider: 0.14em;
+
+  --measure-sm: 38ch;
+  --measure-md: 58ch;
+  --measure-lg: 72ch;
+
+  /* ---------- Editorial sections / shared design system ----------
+     Hero mantém escala própria. About, Services, Projects, FAQ e
+     Contact compartilham estes tokens para impedir divergências. */
+  --section-shell-max: 90rem;
+  --section-shell-inset: clamp(2.5rem, 7vw, 7rem);
+  --section-shell-width: min(calc(100% - var(--section-shell-inset)), var(--section-shell-max));
+
+  --section-topline-gap: 1.5rem;
+  --section-topline-padding-bottom: 1.5rem;
+  --section-topline-padding-bottom-mobile: 1.125rem;
+
+  --section-eyebrow-size: 0.72rem;
+  --section-eyebrow-size-mobile: 0.65rem;
+  --section-eyebrow-weight: var(--fw-extrabold);
+  --section-eyebrow-tracking: 0.16em;
+  --section-eyebrow-line-width: 2.125rem;
+  --section-eyebrow-line-width-mobile: 1.5625rem;
+
+  --section-meta-size: 0.69rem;
+  --section-meta-size-mobile: 0.65rem;
+  --section-meta-weight: var(--fw-bold);
+  --section-meta-tracking: 0.12em;
+  --section-meta-line-height: 1.5;
+
+  --section-title-size: clamp(2.5rem, 4.1vw, 4.9rem);
+  --section-title-size-mobile: clamp(2.35rem, 11vw, 3.85rem);
+  --section-title-weight: 560;
+  --section-title-tracking: -0.062em;
+  --section-title-line-height: 0.98;
+  --section-title-line-height-mobile: 1.01;
+
+  --section-copy-size: clamp(1rem, 1.1vw, 1.1rem);
+  --section-copy-size-mobile: 0.96rem;
+  --section-copy-weight: var(--fw-regular);
+  --section-copy-line-height: 1.85;
+
+  /* Painéis flutuantes (FAQ / Contact) seguem o shell do Hero. */
+  --section-panel-radius: clamp(1.75rem, 3vw, 2.875rem);
+  --section-panel-padding-inline: clamp(2rem, 4vw, 4.5rem);
+  --section-panel-mobile-inset: 1.3rem;
+  --section-panel-padding-inline-mobile: 1.35rem;
+
+  /* ---------- Fluid spacing ---------- */
+  --space-0: 0;
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+  --space-32: 8rem;
+
+  --section-space-sm: clamp(3.5rem, 7vw, 6rem);
+  --section-space: clamp(5rem, 10vw, 9rem);
+  --section-space-lg: clamp(6.5rem, 13vw, 12rem);
+
+  /* ---------- Layout ---------- */
+  --container-xs: 42rem;
+  --container-sm: 54rem;
+  --container-md: 68rem;
+  --container-lg: 80rem;
+  --container-xl: 90rem;
+  --container-max: 100rem;
+  --container-gutter: clamp(1rem, 3vw, 2.5rem);
+
+  --grid-columns: 12;
+  --grid-gap: clamp(1rem, 2vw, 2rem);
+
+  /* ---------- Radius ---------- */
+  --radius-xs: 0.375rem;
+  --radius-sm: 0.625rem;
+  --radius-md: 0.875rem;
+  --radius-lg: 1.25rem;
+  --radius-xl: 1.75rem;
+  --radius-2xl: 2.5rem;
+  --radius-pill: 999px;
+
+  /* ---------- Borders ---------- */
+  --border-1: 1px solid var(--color-border);
+  --border-strong: 1px solid var(--color-border-strong);
+
+  /* ---------- Shadows ---------- */
+  --shadow-xs: 0 1px 2px rgba(36, 35, 40, 0.04);
+  --shadow-sm: 0 4px 14px rgba(36, 35, 40, 0.055);
+  --shadow-md: 0 12px 32px rgba(36, 35, 40, 0.075);
+  --shadow-lg: 0 24px 64px rgba(36, 35, 40, 0.09);
+  --shadow-xl: 0 36px 100px rgba(36, 35, 40, 0.12);
+  --shadow-primary: 0 18px 48px rgba(113, 106, 123, 0.18);
+
+  /* ---------- Glass / effects ---------- */
+  --glass-bg: rgba(255,255,255,0.74);
+  --glass-border: rgba(255,255,255,0.58);
+  --glass-blur: 18px;
+  --overlay-soft: rgba(36, 35, 40, 0.26);
+  --overlay-strong: rgba(36, 35, 40, 0.66);
+
+  /* ---------- Motion ---------- */
+  --duration-instant: 120ms;
+  --duration-fast: 220ms;
+  --duration-base: 360ms;
+  --duration-slow: 650ms;
+  --duration-cinematic: 1000ms;
+
+  --ease-standard: cubic-bezier(.2,.8,.2,1);
+  --ease-out: cubic-bezier(.16,1,.3,1);
+  --ease-in-out: cubic-bezier(.76,0,.24,1);
+  --ease-spring: cubic-bezier(.34,1.56,.64,1);
+
+  --transition-ui: var(--duration-fast) var(--ease-standard);
+  --transition-premium: var(--duration-base) var(--ease-out);
+
+  /* ---------- Component sizing primitives ---------- */
+  --control-h-sm: 2.5rem;
+  --control-h-md: 3rem;
+  --control-h-lg: 3.5rem;
+  --icon-sm: 1rem;
+  --icon-md: 1.25rem;
+  --icon-lg: 1.5rem;
+
+  /* ---------- Z-index ---------- */
+  --z-base: 0;
+  --z-raised: 10;
+  --z-sticky: 100;
+  --z-overlay: 500;
+  --z-modal: 800;
+  --z-toast: 1000;
+
+  /* ---------- Breakpoint references (JS/docs) ---------- */
+  --bp-sm: 36rem;
+  --bp-md: 48rem;
+  --bp-lg: 64rem;
+  --bp-xl: 80rem;
+  --bp-2xl: 96rem;
+}
+
+/* =========================================================
+   NAVIGATION TOKENS
+   Sidebar + Topbar Fluid sem acoplar regras de composição.
+   ========================================================= */
+:root {
+  --sidebar-width: 18.75rem;
+  --sidebar-collapsed-width: 5.25rem;
+  --sidebar-offset: 1rem;
+  --sidebar-padding: 1.35rem;
+  --sidebar-radius: 1.75rem;
+  --mobile-header-height: 4.25rem;
+  --topbar-height: 3.75rem;
+}
+
+/* =========================================================
+   HERO TOKENS — EDITORIAL FLUID
+   Ajustes isolados da primeira direção de Hero.
+   ========================================================= */
+:root {
+  --hero-surface: #f8fbfd;
+  --hero-radius: 2rem;
+  --hero-title-size: clamp(3rem, 2.1rem + 3.25vw, 6.15rem);
+  --hero-shadow: 0 22px 70px rgba(15, 23, 42, 0.055);
+}

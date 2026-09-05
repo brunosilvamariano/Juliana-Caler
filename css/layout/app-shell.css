@@ -1,0 +1,44 @@
+/* =========================================================
+   APP SHELL
+   Relação estrutural entre sidebar, topbar e conteúdo.
+   Não contém estilos de seções específicas do site.
+   ========================================================= */
+
+.site-shell {
+  min-height: 100%;
+}
+
+.site-main {
+  min-height: 100vh;
+  margin-left: calc(var(--sidebar-width) + (var(--sidebar-offset) * 2));
+  padding-top: calc(var(--topbar-height) + (var(--sidebar-offset) * 2));
+  transition: margin-left var(--duration-base) var(--ease-out);
+}
+
+body.sidebar-collapsed .site-main {
+  margin-left: calc(var(--sidebar-collapsed-width) + (var(--sidebar-offset) * 2));
+}
+
+@media (max-width: 63.99rem) {
+  .site-main,
+  body.sidebar-collapsed .site-main {
+    margin-left: 0;
+  }
+
+  .site-main {
+    padding-top: var(--mobile-header-height);
+  }
+}
+
+
+/* Deslocamento de conteúdo por arquitetura de header. */
+@media (min-width: 64rem) {
+  body[data-header-variant="top-dock"] .site-main {
+    margin-left: 0;
+    padding-top: 7rem;
+  }
+
+  body.sidebar-collapsed[data-header-variant="top-dock"] .site-main {
+    margin-left: 0;
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "calendar": {
+      "status": "Próximo passo",
+      "title": "Agendar atendimento",
+      "meta": "Fale diretamente com a Bruna",
+      "aria": "Agendar atendimento com Bruna Gesser pelo WhatsApp"
+    },
+    "minimal": {
+      "status": "",
+      "title": "Falar com Bruna",
+      "meta": "WhatsApp",
+      "aria": "Falar com Bruna Gesser pelo WhatsApp"
+    }
+  }
+}
