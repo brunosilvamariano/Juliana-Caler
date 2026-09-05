@@ -7,7 +7,7 @@
 /* 01 — SIDEBAR PREMIUM
    Referência atual: lateral completa + topbar contextual. */
 body[data-header-variant="sidebar-premium"] .sidebar {
-  background: linear-gradient(145deg, rgba(255,255,255,.97), rgba(244,248,252,.94));
+  background: linear-gradient(145deg, rgba(255,255,255,.97), rgba(247,245,248,.94));
 }
 
 /* 02 — TOP DOCK
@@ -24,7 +24,7 @@ body[data-header-variant="sidebar-premium"] .sidebar {
     overflow: visible;
     border-radius: 1.45rem;
     background: rgba(255,255,255,.90);
-    box-shadow: 0 20px 55px rgba(15,23,42,.10);
+    box-shadow: 0 20px 55px rgba(36,35,40,.10);
     backdrop-filter: blur(20px) saturate(135%);
     -webkit-backdrop-filter: blur(20px) saturate(135%);
   }
@@ -94,7 +94,7 @@ body[data-header-variant="sidebar-premium"] .sidebar {
   body[data-header-variant="top-dock"] .sidebar__link.is-active,
   body[data-header-variant="top-dock"] .sidebar__link[aria-current="page"] {
     border-color: transparent;
-    background: #f5f7ff;
+    background: #f7f5f8;
     box-shadow: none;
   }
 
@@ -112,7 +112,7 @@ body[data-header-variant="sidebar-premium"] .sidebar {
     gap: .75rem;
     padding: .48rem .55rem .48rem .9rem;
     border-radius: .95rem;
-    background: #111827;
+    background: #242328;
     color: #fff;
   }
 

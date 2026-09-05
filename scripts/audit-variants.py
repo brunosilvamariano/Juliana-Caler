@@ -28,9 +28,9 @@ def need(cond,msg):
 need('data-header-variant="sidebar-premium"' in HTML, 'HTML: header fallback missing')
 need('data-sidebar-cta="calendar"' in HTML, 'HTML: CTA fallback missing')
 for attr,val in [
-    ('data-hero-variant','organic'),('data-marquee-variant','modern-clean'),
+    ('data-hero-variant','diagonal'),('data-marquee-variant','modern-clean'),
     ('data-about-image-variant','fluid-bezier'),('data-about-info-variant','vision-mission-values'),
-    ('data-services-variant','premium-grid'),('data-projects-variant','editorial-grid'),
+    ('data-services-variant','premium-cards'),('data-projects-variant','offset-grid'),
     ('data-faq-variant','premium-panel')]:
     need(f'{attr}="{val}"' in HTML, f'HTML: default {attr}={val} missing')
 

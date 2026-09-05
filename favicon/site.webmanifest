@@ -4,8 +4,8 @@
   "description": "Bruna Gesser é psicóloga clínica em Joinville, com psicoterapia para adolescentes e adultos. Entre em contato para informações e agendamento.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#f8fbfd",
-  "theme_color": "#f8fbfd",
+  "background_color": "#F7F6F3",
+  "theme_color": "#716A7B",
   "icons": [
     {
       "src": "/favicon/android-chrome-192x192.png",

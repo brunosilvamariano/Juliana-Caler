@@ -69,6 +69,9 @@
   --color-text: var(--bruna-text);
   --color-text-strong: var(--bruna-graphite);
   --color-text-muted: #7b757e;
+  /* Aliases usados por componentes editoriais legados. */
+  --color-text-primary: var(--color-text-strong);
+  --color-text-secondary: var(--color-text);
   --color-text-inverse: #ffffff;
 
   --color-border: rgba(36, 35, 40, 0.10);
@@ -277,8 +280,8 @@
    Ajustes isolados da primeira direção de Hero.
    ========================================================= */
 :root {
-  --hero-surface: #f8fbfd;
+  --hero-surface: var(--bruna-ivory);
   --hero-radius: 2rem;
   --hero-title-size: clamp(3rem, 2.1rem + 3.25vw, 6.15rem);
-  --hero-shadow: 0 22px 70px rgba(15, 23, 42, 0.055);
+  --hero-shadow: 0 22px 70px rgba(36, 35, 40, 0.055);
 }

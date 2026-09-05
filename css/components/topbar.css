@@ -16,10 +16,10 @@
   align-items: center;
   gap: var(--space-5);
   padding: 0.48rem 0.55rem 0.48rem 1.2rem;
-  border: 1px solid rgba(15, 23, 42, 0.07);
+  border: 1px solid rgba(36, 35, 40, 0.07);
   border-radius: var(--radius-pill);
   background: rgba(255, 255, 255, 0.64);
-  box-shadow: 0 10px 35px rgba(15, 23, 42, 0.045);
+  box-shadow: 0 10px 35px rgba(36, 35, 40, 0.045);
   backdrop-filter: blur(18px) saturate(135%);
   -webkit-backdrop-filter: blur(18px) saturate(135%);
   transition:
@@ -35,9 +35,9 @@ body.sidebar-collapsed .topbar {
 }
 
 .topbar.is-scrolled {
-  border-color: rgba(15, 23, 42, 0.09);
+  border-color: rgba(36, 35, 40, 0.09);
   background: rgba(255, 255, 255, 0.88);
-  box-shadow: 0 14px 42px rgba(15, 23, 42, 0.07);
+  box-shadow: 0 14px 42px rgba(36, 35, 40, 0.07);
 }
 
 /* ---------- Contexto atual ---------- */
@@ -77,7 +77,7 @@ body.sidebar-collapsed .topbar {
   height: 1px;
   overflow: hidden;
   border-radius: var(--radius-pill);
-  background: rgba(15, 23, 42, 0.08);
+  background: rgba(36, 35, 40, 0.08);
 }
 
 .topbar__progress-bar {
@@ -126,10 +126,10 @@ body.sidebar-collapsed .topbar {
   align-items: center;
   gap: 0.7rem;
   padding: 0 1rem 0 1.05rem;
-  border: 1px solid rgba(15, 23, 42, 0.07);
+  border: 1px solid rgba(36, 35, 40, 0.07);
   border-radius: var(--radius-pill);
   background: rgba(255, 255, 255, 0.9);
-  box-shadow: 0 7px 20px rgba(15, 23, 42, 0.06);
+  box-shadow: 0 7px 20px rgba(36, 35, 40, 0.06);
   color: var(--slate-900);
   font-size: 0.68rem;
   font-weight: var(--fw-semibold);

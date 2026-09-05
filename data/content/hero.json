@@ -2,7 +2,7 @@
   "eyebrow": "Instituto Gesser · Joinville/SC",
   "title": {
     "main": "Psicóloga Clínica",
-    "accent": "especializada"
+    "accent": "em Joinville"
   },
   "description": "Psicoterapia para adolescentes e adultos, com acolhimento, presença e um processo construído com cuidado.",
   "primaryCta": {
@@ -15,6 +15,6 @@
   },
   "image": {
     "src": "assets/images/hero/hero-editorial.webp",
-    "alt": "Bruna Gesser, psicóloga clínica em Joinville"
+    "alt": "Retrato profissional de Bruna Gesser, psicóloga clínica em Joinville"
   }
 }

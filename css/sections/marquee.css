@@ -10,7 +10,7 @@
 
 .marquee-modern {
   --marquee-bg: color-mix(in srgb, var(--color-bg-subtle) 90%, #ffffff 10%);
-  --marquee-border: rgba(15, 23, 42, 0.08);
+  --marquee-border: rgba(36, 35, 40, 0.08);
   --marquee-text: color-mix(in srgb, var(--color-text-strong) 88%, transparent);
   --marquee-muted: color-mix(in srgb, var(--color-text-muted) 72%, transparent);
   --marquee-accent: var(--color-primary);
@@ -36,7 +36,7 @@
     color-mix(in srgb, var(--color-primary) 3.5%, transparent),
     transparent 28%,
     transparent 72%,
-    rgba(99, 102, 241, 0.025)
+    rgba(170, 163, 183, 0.03)
   );
 }
 
@@ -182,7 +182,7 @@
   font-size: var(--marquee-font-size);
   font-weight: 640;
   letter-spacing: -0.035em;
-  color: #182033;
+  color: #2d2a30;
 }
 
 /* 02 — SOFT OUTLINE */
@@ -191,12 +191,12 @@
   font-weight: 760;
   letter-spacing: -0.045em;
   color: transparent;
-  -webkit-text-stroke: 1px rgba(24, 32, 51, 0.62);
-  text-stroke: 1px rgba(24, 32, 51, 0.62);
+  -webkit-text-stroke: 1px rgba(45, 42, 48, 0.62);
+  text-stroke: 1px rgba(45, 42, 48, 0.62);
 }
 
 .marquee-modern[data-marquee-variant="soft-outline"] .marquee-modern__word:nth-of-type(4n + 1) {
-  color: #182033;
+  color: #2d2a30;
   -webkit-text-stroke: 0;
   text-stroke: 0;
 }
