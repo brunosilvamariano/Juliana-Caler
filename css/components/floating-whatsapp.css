@@ -85,6 +85,12 @@ body.contact-in-view .floating-whatsapp {
   }
 }
 
+@media (min-width: 1024px) {
+  body.topbar-hidden .floating-whatsapp {
+    display: grid;
+  }
+}
+
 @media (max-width: 430px) {
   .floating-whatsapp {
     right: max(14px, env(safe-area-inset-right));

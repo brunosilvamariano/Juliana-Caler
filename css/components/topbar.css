@@ -30,6 +30,12 @@
     transform var(--transition-premium);
 }
 
+@media (min-width: 64rem) {
+  .topbar.is-hidden {
+    transform: translateY(calc(-100% - var(--sidebar-offset)));
+  }
+}
+
 body.sidebar-collapsed .topbar {
   left: calc(var(--sidebar-collapsed-width) + (var(--sidebar-offset) * 3));
 }

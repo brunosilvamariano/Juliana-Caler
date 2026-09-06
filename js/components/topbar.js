@@ -18,6 +18,8 @@
   const sectionIndex = topbar.querySelector("[data-topbar-index]");
   const sectionLabel = topbar.querySelector("[data-topbar-label]");
   const sidebarLinks = Array.from(document.querySelectorAll("[data-sidebar-link]"));
+  const desktopBreakpoint = 1024;
+  let lastScrollTop = window.scrollY || document.documentElement.scrollTop;
 
   function updateScrollState() {
     const scrollTop = window.scrollY || document.documentElement.scrollTop;
@@ -26,8 +28,19 @@
       document.documentElement.scrollHeight - window.innerHeight
     );
     const progress = Math.min(100, Math.max(0, (scrollTop / scrollable) * 100));
+    const scrollDelta = scrollTop - lastScrollTop;
 
     topbar.classList.toggle("is-scrolled", scrollTop > 12);
+    if (window.innerWidth >= desktopBreakpoint && scrollTop > 24 && Math.abs(scrollDelta) > 2) {
+      const isHidden = scrollDelta > 0;
+      topbar.classList.toggle("is-hidden", isHidden);
+      document.body.classList.toggle("topbar-hidden", isHidden);
+    } else if (scrollTop <= 24 || window.innerWidth < desktopBreakpoint) {
+      topbar.classList.remove("is-hidden");
+      document.body.classList.remove("topbar-hidden");
+    }
+
+    lastScrollTop = scrollTop;
     if (progressBar) progressBar.style.width = `${progress}%`;
   }
 

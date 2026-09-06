@@ -3,7 +3,8 @@
  * WHATSAPP FLUTUANTE — Responsive Smart Visibility
  * ---------------------------------------------------------
  * Regras:
- * - aparece apenas em viewport responsiva (<= 1023px);
+ * - aparece em viewport responsiva (<= 1023px);
+ * - no desktop, aparece enquanto a topbar estiver recolhida;
  * - some enquanto a sidebar mobile estiver aberta;
  * - some quando a seção Contato entra na área útil da tela;
  * - reaparece automaticamente ao sair do Contato;
@@ -30,7 +31,8 @@
     }
 
     function syncVisibility() {
-      const shouldHide = !mobileQuery.matches || sidebarIsOpen() || contactInView;
+      const desktopTopbarIsHidden = document.body.classList.contains("topbar-hidden");
+      const shouldHide = (!mobileQuery.matches && !desktopTopbarIsHidden) || sidebarIsOpen() || contactInView;
 
       button.classList.toggle(HIDDEN_CLASS, shouldHide);
       button.setAttribute("aria-hidden", String(shouldHide));
