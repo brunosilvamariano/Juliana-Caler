@@ -886,14 +886,30 @@
   }
 
   .services-editorial[data-services-variant="premium-cards"] .services-editorial__railbar {
-    align-items: flex-end;
-    gap: 16px;
+    align-items: center;
+    gap: 12px;
+    min-height: 42px;
+    padding-bottom: 18px;
   }
 
   .services-editorial__rail-hint {
-    max-width: 12ch;
-    white-space: normal;
-    line-height: 1.45;
+    max-width: none;
+    flex: 1 1 auto;
+    white-space: nowrap;
+    line-height: 1;
+    font-size: 0.62rem;
+    letter-spacing: 0.12em;
+  }
+
+  .services-editorial__rail-hint-dot {
+    width: 22px;
+    height: 14px;
+    flex: 0 0 22px;
+  }
+
+  .services-editorial__rail-tools {
+    flex: 0 0 auto;
+    gap: 8px;
   }
 
   .services-editorial__rail-progress {
