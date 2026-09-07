@@ -430,11 +430,37 @@ body.sidebar-collapsed .sidebar__collapse {
 
   .sidebar {
     top: calc(var(--mobile-header-height) + 0.75rem);
-    bottom: 0.75rem;
+    bottom: auto;
     left: 0.75rem;
     width: min(calc(100vw - 1.5rem), 22rem);
+    height: calc(100dvh - var(--mobile-header-height) - 1.5rem);
+    max-height: calc(100dvh - var(--mobile-header-height) - 1.5rem);
     border-radius: 1.5rem;
+    overflow-y: auto;
+    overscroll-behavior: contain;
     transform: translateX(calc(-100% - 1.5rem));
+  }
+
+  .sidebar__inner {
+    min-height: 100%;
+    padding: 1rem;
+  }
+
+  .sidebar__section-label {
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .sidebar__link {
+    min-height: 2.85rem;
+  }
+
+  .sidebar__footer {
+    gap: 0.75rem;
+  }
+
+  .sidebar__socials {
+    padding-bottom: 0.15rem;
   }
 
   .sidebar__collapse {
