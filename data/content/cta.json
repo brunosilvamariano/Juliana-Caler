@@ -3,14 +3,14 @@
     "calendar": {
       "status": "Próximo passo",
       "title": "Agendar atendimento",
-      "meta": "Fale diretamente com a Bruna",
-      "aria": "Agendar atendimento com Bruna Gesser pelo WhatsApp"
+      "meta": "Fale diretamente com a Dra. Juliana",
+      "aria": "Agendar atendimento com a Dra. Juliana Caler pelo WhatsApp"
     },
     "minimal": {
       "status": "",
-      "title": "Falar com Bruna",
+      "title": "Falar com Juliana",
       "meta": "WhatsApp",
-      "aria": "Falar com Bruna Gesser pelo WhatsApp"
+      "aria": "Falar com a Dra. Juliana Caler pelo WhatsApp"
     }
   }
 }

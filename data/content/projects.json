@@ -1,21 +1,21 @@
 {
   "eyebrow": "04 / Galeria",
   "metaLines": [
-    "Bruna Gesser · Psicologia Clínica",
+    "Dra. Juliana Caler · Psicologia Clínica",
     "Joinville · SC"
   ],
   "title": {
     "main": "Um olhar atento para",
     "accent": "cada história."
   },
-  "description": "Conheça um pouco mais sobre Bruna Gesser e sua atuação em psicologia clínica.",
+  "description": "Conheça um pouco mais sobre a Dra. Juliana Caler e sua atuação em psicologia clínica.",
   "items": [
     {
-      "title": "Bruna Gesser",
+      "title": "Dra. Juliana Caler",
       "category": "Psicóloga Clínica · Joinville",
       "image": {
         "src": "assets/images/projects/project-01.webp",
-        "alt": "Bruna Gesser sentada em retrato profissional com roupa preta"
+        "alt": "Dra. Juliana Caler sentada em retrato profissional com roupa preta"
       }
     },
     {
@@ -31,7 +31,7 @@
       "category": "Psicologia Clínica · Acolhimento",
       "image": {
         "src": "assets/images/projects/project-03.webp",
-        "alt": "Bruna Gesser em gravação de podcast diante de um microfone"
+        "alt": "Dra. Juliana Caler em gravação de podcast diante de um microfone"
       }
     },
     {
@@ -39,7 +39,7 @@
       "category": "Escuta · Reflexão · Autoconhecimento",
       "image": {
         "src": "assets/images/projects/project-04.webp",
-        "alt": "Bruna Gesser sentada no consultório ao lado de um espelho"
+        "alt": "Dra. Juliana Caler sentada no consultório ao lado de um espelho"
       }
     },
     {
@@ -47,7 +47,7 @@
       "category": "Atendimento psicológico · Joinville/SC",
       "image": {
         "src": "assets/images/projects/project-05.webp",
-        "alt": "Bruna Gesser lendo junto à janela"
+        "alt": "Dra. Juliana Caler lendo junto à janela"
       }
     }
   ],

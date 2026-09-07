@@ -1,7 +1,7 @@
 {
   "eyebrow": "02 / Sobre",
   "metaLines": [
-    "Bruna Gesser (CRP 12/27976)"
+    "Dra. Juliana Caler (CRP 12/27976)"
   ],
   "titleLines": [
     {
@@ -10,21 +10,21 @@
       "after": ""
     }
   ],
-  "description": "Bruna Gesser é psicóloga clínica em Joinville e realiza psicoterapia com adolescentes e adultos. O atendimento considera a história, o momento e as necessidades de cada pessoa, em um espaço de escuta e cuidado.",
+  "description": "Dra. Juliana Caler é psicóloga clínica em Joinville e realiza psicoterapia com adolescentes e adultos. O atendimento considera a história, o momento e as necessidades de cada pessoa, em um espaço de escuta e cuidado.",
   "quote": "Eu aprendi a nadar tão bem, que ninguém mais vem ver se eu estou me afogando ou não.",
   "slider": {
     "images": [
       {
         "src": "assets/images/about/about-01.webp",
-        "alt": "Bruna Gesser em retrato profissional com blazer preto e fundo cinza"
+        "alt": "Dra. Juliana Caler em retrato profissional com blazer preto e fundo cinza"
       },
       {
         "src": "assets/images/about/about-02.webp",
-        "alt": "Bruna Gesser em retrato profissional usando jaleco branco"
+        "alt": "Dra. Juliana Caler em retrato profissional usando jaleco branco"
       },
       {
         "src": "assets/images/about/about-03.webp",
-        "alt": "Bruna Gesser em pé no consultório, com camisa branca e jeans"
+        "alt": "Dra. Juliana Caler em pé no consultório, com camisa branca e jeans"
       }
     ]
   },

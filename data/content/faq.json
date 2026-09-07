@@ -8,14 +8,14 @@
     "main": "Algumas dúvidas antes de",
     "accent": "começar."
   },
-  "description": "Respostas para dúvidas comuns sobre psicoterapia, atendimento psicológico para adolescentes e adultos e o processo de agendamento com Bruna Gesser em Joinville.",
+  "description": "Respostas para dúvidas comuns sobre psicoterapia, atendimento psicológico para adolescentes e adultos e o processo de agendamento com a Dra. Juliana Caler em Joinville.",
   "visual": {
     "src": "assets/images/faq/faq-editorial.webp",
     "alt": ""
   },
   "contactCta": {
     "label": "Ainda tem uma dúvida?",
-    "href": "https://wa.me/5547992302828?text=Ol%C3%A1%2C%20Bruna%21%20Acessei%20seu%20site%20e%20fiquei%20com%20uma%20d%C3%BAvida%20sobre%20a%20psicoterapia.%20Poderia%20me%20ajudar%3F"
+    "href": "https://wa.me/5547992302828?text=Ol%C3%A1%2C%20Juliana%21%20Acessei%20seu%20site%20e%20fiquei%20com%20uma%20d%C3%BAvida%20sobre%20a%20psicoterapia.%20Poderia%20me%20ajudar%3F"
   },
   "items": [
     {
@@ -24,7 +24,7 @@
     },
     {
       "question": "Para quem é o atendimento?",
-      "answer": "Bruna Gesser atua com psicologia clínica para adolescentes e adultos. Para entender se o atendimento é adequado ao seu momento e tirar dúvidas antes de começar, você pode entrar em contato diretamente pelo WhatsApp."
+      "answer": "A Dra. Juliana Caler atua com psicologia clínica para adolescentes e adultos. Para entender se o atendimento é adequado ao seu momento e tirar dúvidas antes de começar, você pode entrar em contato diretamente pelo WhatsApp."
     },
     {
       "question": "Preciso estar em uma crise para procurar psicoterapia?",
@@ -40,7 +40,7 @@
     },
     {
       "question": "Onde acontecem os atendimentos?",
-      "answer": "Bruna Gesser atua em Joinville, Santa Catarina. Para confirmar o endereço do atendimento, modalidades disponíveis e horários, entre em contato pelo WhatsApp antes do agendamento."
+      "answer": "A Dra. Juliana Caler atua em Joinville, Santa Catarina. Para confirmar o endereço do atendimento, modalidades disponíveis e horários, entre em contato pelo WhatsApp antes do agendamento."
     }
   ]
 }
